@@ -1,0 +1,608 @@
+screen 0
+{
+    general
+    {
+        border = 1
+        snap = 8
+        resize_hints = true
+        new_get_focus= true
+        #opacity_unfocused = 85
+        font = "Dejavu Sans Mono-7"
+        sloppy_focus = true
+        sloppy_focus_raise = true
+    }
+    
+    colors
+    {
+        normal_border = "#191919"
+        normal_bg = "#121212"
+        normal_fg = "#DDDDDD"
+        focus_border = "#191919"
+        focus_bg = "#191919"
+        focus_fg = "#9ACD32"
+    }
+  
+    # Specify the 'workspaces' and layouts for each.
+    tags
+    { 
+        tag 1:Stn { layout = "floating" }
+        tag 2:Prt { layout = "tile" } 
+        tag 3:Stb { layout = "tile" }
+        tag 4:Bow { layout = "tile" }
+        tag 5:Lch { layout = "tile" }
+        tag 6:Dck { layout = "tile" }
+    }
+    
+    layouts
+    {
+        layout tile { image = "/usr/share/awesome/icons/layouts/tilew.png" }
+        layout tileleft { image = "/usr/share/awesome/icons/layouts/tileleftw.png" }
+        layout tilebottom { image = "/usr/share/awesome/icons/layouts/tilebottomw.png" }
+        layout tiletop { image = "/usr/share/awesome/icons/layouts/tiletopw.png" }
+        layout max { image = "/usr/share/awesome/icons/layouts/maxw.png" }
+        layout spiral { image = "/usr/share/awesome/icons/layouts/spiralw.png" }
+        layout dwindle { image = "/usr/share/awesome/icons/layouts/dwindlew.png" }
+        layout floating { image = "/usr/share/awesome/icons/layouts/floatingw.png" }
+    }
+
+    statusbar top
+    {
+        position = "top"
+        height = 16
+
+        taglist tl
+        {
+            mouse
+            {
+                button = "1"
+                command = "tag_view"
+            }
+            mouse
+            {
+                button = "1"
+                modkey = {"Mod4"}
+                command = "client_tag"
+            }
+            mouse
+            {
+                button = "3"
+                command = "tag_toggleview"
+            }
+            mouse
+            {
+                button = "3"
+                modkey = {"Mod4"}
+                command = "client_toggletag"
+            }
+            mouse
+            {
+                button = "4"
+                command = "tag_viewnext"
+            }
+            mouse
+            {
+                button = "5"
+                command = "tag_viewprev"
+            }
+        }
+
+        layoutinfo li
+        {
+            mouse
+            {
+                button = "1"
+                command = "tag_setlayout"
+                arg = "+1"
+            }
+            mouse
+            {
+                button = "4"
+                command = "tag_setlayout"
+                arg = "+1"
+            }
+            mouse
+            {
+                button = "3"
+                command = "tag_setlayout"
+                arg = "-1"
+            }
+            mouse
+            {
+                button = "5"
+                command = "tag_setlayout"
+                arg = "-1"
+            }
+        }
+
+        ### CPU
+        textbox tb_space { text = "   " }
+        iconbox ib_cpu { image="/home/daedalus/.icons/cpu.png" }
+        textbox tb_cpu_mhz { fg = "#556B2F" text = "   " }
+        #textbox tb_cpu_mhz2 { fg = "#556B2F" text = "GHz " }
+        #textbox tb_cpu_temp { fg = "#556B2F" text = "    " }
+        #textbox tb_cpu { fg = "#556B2F" text = " 1:" }
+        graph gr_cpu
+        {
+            data { scale = false max = 100 fg = "#996666" style = bottom} # total
+            data { scale = false max = 100 fg = "#006633" style = bottom} # user
+            data { scale = false max = 100 fg = "#ffffff" style = bottom} # nice-processes
+            width = 50
+            height = "0.80"
+            bg = "#080808"
+            bordercolor = "#556B2F"
+        }
+  
+        ### GPU - Nvidia
+        textbox tb_space2 { text = "   " }
+        iconbox ib_gpu
+        {
+            image="/home/daedalus/.icons/nvidia.png"
+            mouse
+            {
+                button = "1"
+                command = "spawn"
+                arg = "nvidia-settings"
+            }
+        }
+        textbox tb_gpu_temp { fg = "#757575" text = " " }
+        textbox tb_gpu_temp2 { fg = "#757575" text = "°F " }
+  
+        ### Mem / Swap
+        textbox tb_space3 { text = "   " }
+        iconbox ib_mem { image="/home/daedalus/.icons/mem.png" }
+        progressbar pb_mem
+        {
+            bar { fg = "#F0E68C" bg = "#A7A15E" bordercolor = "#5F3A22" }
+            bar { fg = "#F0C781" bg = "#A77D5B" bordercolor = "#5F3A22" }
+            width = "50"
+            height = "0.70"
+            gap = 2
+            padding = 3
+        }
+  
+        ### NET
+        textbox tb_space4 { text = "   " }
+        iconbox ib_net
+        {
+            image="/home/daedalus/.icons/net.png"
+            mouse
+            {
+                button = "1"
+                command = "spawn"
+                arg = "gnome-nettool"
+            }
+        }
+        textbox tb_net_in { fg = "#DAA520" text = " " }
+        textbox tb_net_in2 { fg = "#DAA520" text = "KB/s" }
+        graph gr_net_in
+        {
+            data { scale = false max = 100 fg = "#DAA520" style = bottom }
+            width = 50
+            height = "0.8"
+            bg = "#080808"
+            bordercolor = "#896814"
+            padding_left = 3
+        }
+        textbox tb_space5 { text = " " }
+        textbox tb_net_out { fg = "#ae4747" text = " " }
+        textbox tb_net_out2 { fg = "#ae4747" text = "KB/s" }
+        graph gr_net_out
+        {
+            data { scale = false max = 100 fg = "#ae4747" style = bottom }
+            width = 50
+            height = "0.8"
+            bg = "#080808"
+            bordercolor = "#642929"
+            padding_left = 3
+        }
+  
+        ### Volume (MPD)
+        textbox tb_space6 { text = "   " }
+        iconbox ib_vol
+        {
+            image="/home/daedalus/.icons/vol.png"
+            mouse
+            {
+                button = "1"
+                command = "spawn"
+                arg = "mpc volume +5"
+            }
+            mouse
+            {
+                button = "3"
+                command = "spawn"
+                arg = "mpc volume -5"
+            }
+        }
+        progressbar pb_vol
+        {
+            bar { fg = "#7c96b0" bg = "#000000" bordercolor = "#274E84" }
+            #bar { fg = "#7c96b0" bg = "#364A57" bordercolor = "#274E84" }
+            width = "30"
+            height = "0.6"
+            gap = 2
+            padding = 3
+        }
+  
+        ### MPD
+        textbox tb_space7 { text = " " }
+        textbox tb_mpd
+        {
+            width = 318
+            align = "right"
+            fg = "#6f99b4" text = " "
+        }
+        textbox tb_space8 { text = " " }
+        iconbox ib_mpd_prev
+        {
+            image = "/home/daedalus/.icons/pre.png"
+            mouse 
+            {
+                button = "1"
+                command = "spawn"
+                arg = "mpc prev"
+            }
+        }
+        iconbox ib_mpd_pp
+        {
+            image = "/home/daedalus/.icons/pp.png"
+            mouse
+            {
+                button = "1"
+                command = "spawn"
+                arg = "mpc toggle"
+            }
+        }
+        iconbox ib_mps_next
+        {
+            image = "/home/daedalus/.icons/next.png"
+            mouse
+            {
+                button = "1"
+                command = "spawn"
+                arg = "mpc next"
+            }
+        }
+    }
+
+    statusbar bottom
+    {
+        position = "bottom"
+        height = 16
+        tasklist taskbottom
+        {
+      	    text_align = "left"
+      	    show_icons = true
+      	    show = all
+            
+            x = 1
+      	    y = 0
+
+      	    mouse
+	        {
+  		        modkey = {}
+   		        button = "4"
+     		    command = "client_focusnext"
+  		    }
+      		mouse
+		    {
+        		modkey = {}
+        		button = "5"
+        		command = "client_focusprev"
+     		}
+      		mouse
+		    {
+        		modkey = {"Mod4"}
+        		button = "4"
+        		command = "client_swapnext"
+      		}
+      		mouse
+		    {
+        		modkey = {"Mod4"}
+        		button = "5"
+        		command = "client_swapprev"
+      		}	
+        }
+
+        ### Date / Time
+        textbox tb_space9 { text = " " }
+        textbox tb_date
+        {
+            align = "right"
+            fg = "#8B7B8B" text = " "
+        }
+        textbox tb_space10 { text = "              " }
+    }
+}
+
+
+#This section defines in which tag a program will open, as well as whether it is tile, max, or float.
+rules
+{
+    rule { name = "sonata" float = true }
+    rule { name = "pidgin" float = true }
+    rule { name = "MPlayer" float = true }
+    rule { name = "vlc" float = true }
+    #rule { name = "urxvt" tags = "1:term" }
+    rule { name = "Firefox-bin.*" float = true }
+    rule { name = "Thunderbird-bin.*" float = true }
+    rule { name = "thunar" float = true }
+    rule { name = "trayer" tags = "[1-6]" }
+    rule { name = "eog" float = true }
+    rule { name = "amarokapp" float = true }
+    rule { name = "OpenOffice.org*" float = true }
+    rule { name = "evince" float = true }
+    rule { name = "epiphany" float = true }
+}
+
+mouse
+{
+    root
+    {
+        button = "3"
+        #command = "exe=`dmenu_path | dmenu -nb '#121212' -nf '#dddddd' -sb '#202020' -sf '#9ACD32'` && exec $exe"
+        #arg = "exe=`dmenu_path | dmenu -nb '#121212' -nf '#dddddd' -sb '#202020' -sf '#9ACD32'` && eval \"exec $exe\""
+    }
+    root
+    {
+        button = "4"
+        command = "tag_viewnext"
+    }
+    root
+    {
+        button = "5"
+        command = "tag_viewprev"
+    }
+    client
+    {
+        modkey = {"Mod4"}
+        button = "1"
+        command = "client_movemouse"
+    }
+    client
+    {
+        modkey = {"Mod4"}
+        button = "2"
+        command = "client_zoom"
+    }
+    client
+    {
+        modkey = {"Mod4"}
+        button = "3"
+        command = "client_resizemouse"
+    }
+}
+
+keys
+{
+    key
+    {
+        modkey = {"Mod4"}
+        key = "Return"
+        command = "spawn"
+        arg = "exec urxvt"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "space"
+        command = "spawn"
+        arg = "exec ~/bin/dmenu.sh"
+    }
+    key
+    {
+        modkey = {"Mod4", "Shift"}
+        key = "Right"
+        command = "tag_setlayout"
+        arg = "+1"
+    }
+    key
+    {
+        modkey = {"Mod4", "Shift"}
+        key = "Left"
+        command = "tag_setlayout"
+        arg = "-1"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "b"
+        command = "statusbar_toggle"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "Down"
+        command = "client_focusnext"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "Up"
+        command = "client_focusprev"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "Tab"
+        command = "focus_history"
+        arg = "-1"
+    }
+    key
+    {
+        modkey = {"Mod4", "Shift"}
+        key = "j"
+        command = "client_swapnext"
+    }
+    key
+    {
+        modkey = {"Mod4", "Shift"}
+        key = "k"
+        command = "client_swapprev"
+    }
+    key
+    {
+        modkey = {"Mod4", "Control"}
+        key = "j"
+        command = "screen_focus"
+        arg = "+1"
+    }
+    key
+    {
+        modkey = {"Mod4", "Control"}
+        key = "k"
+        command = "screen_focus"
+        arg = "-1"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "h"
+        command = "tag_setmwfact"
+        arg = "-0.05"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "l"
+        command = "tag_setmwfact"
+        arg = "+0.05"
+    }
+    key
+    {
+        modkey = {"Mod4", "Shift"}
+        key = "h"
+        command = "tag_setnmaster"
+        arg = "+1"
+    }
+    key
+    {
+        modkey = {"Mod4", "Shift"}
+        key = "l"
+        command = "tag_setnmaster"
+        arg = "-1"
+    }
+    key
+    {
+        modkey = {"Mod4", "Control"}
+        key = "h"
+        command = "tag_setncol"
+        arg = "+1"
+    }
+    key
+    {
+        modkey = {"Mod4", "Control"}
+        key = "l"
+        command = "tag_setncol"
+        arg = "-1"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "Escape"
+        command = "tag_viewprev_selected"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "Left"
+        command = "tag_viewprev"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "Right"
+        command = "tag_viewnext"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "m"
+        command = "client_togglemax"
+    }
+    key
+    {
+        modkey = {"Mod4", "Control"}
+        key = "Return"
+        command = "client_zoom"
+    }
+    key
+    {
+        modkey = {"Mod4", "Control"}
+        key = "space"
+        command = "client_togglefloating"
+    }
+    key
+    {
+        modkey = {"Mod4"}
+        key = "c"
+        command = "client_kill"
+    }
+    key
+    {
+        modkey = {"Mod4", "Shift"}
+        key = "q"
+        command = "quit"
+    }
+    key
+    {
+        modkey = {"Mod4", "Control"}
+        key = "r"
+        command = "exec"
+        arg = "awesome"
+    }
+    key
+    {
+       modkey = {"Mod4"}
+       key = "0"
+       command = "tag_view"
+    }
+    keylist
+    {
+        modkey = {"Mod4"}
+        command = "tag_view"
+        keylist = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+        arglist = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+    }
+    key
+    {
+        modkey = {"Mod4", "Control"}
+        key = "0"
+        command = "tag_toggleview"
+    }
+    keylist
+    {
+        modkey = {"Mod4", "Control"}
+        command = "tag_toggleview"
+        keylist = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+        arglist = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+    }
+
+    key
+    {
+        modkey = {"Mod4", "Shift"}
+        key = "0"
+        command = "client_tag"
+    }
+    keylist
+    {
+        modkey = {"Mod4", "Shift"}
+        command = "client_tag"
+        keylist = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+        arglist = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+    }
+
+    key
+    {
+        modkey = {"Mod4", "Shift", "Control"}
+        key = "0"
+        command = "client_toggletag"
+    }
+    keylist
+    {
+        modkey = {"Mod4", "Shift", "Control"}
+        command = "client_toggletag"
+        keylist = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+        arglist = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+    }
+}

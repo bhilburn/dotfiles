@@ -1,0 +1,46 @@
+! URxvt import colour scheme
+#include ".Xdefaults.daedalus"
+
+!!!!!!!!!!!!!!!!!!!!!
+! urxvt
+!!!!!!!!!!!!!!!!!!!!!
+
+! Font options
+URxvt*font: xft:terminus:pixelsize=12:antialias=true:hinting=true
+URxvt*boldFont: xft:terminus:pixelsize=12:antialias=true:hinting=true
+urxvt*italicFont: xft:terminus:pixelsize=12:antialias=true:italic:autohint=true:hinting=true
+urxvt*bolditalicFont: xft:terminus:pixelsize=12:antialias=true:bold:italic:autohint=true:hinting=true
+Xft.dpi: 96
+
+! Coloring, shading, etc
+URxvt*depth: 32
+!URxvt*font: -*-terminus-medium-*-*-12-*-*-*-*-*-*-*
+!URxvt*transparent: true
+URxvt*tintColor: #000000
+URxvt*shading: 25 
+URxvt*foreground: white
+!URxvt*background: #242424
+urxvt*background: rgba:0000/0000/0000/dddd
+
+! Misc options
+URxvt*perl-ext-common: default,matcher
+URxvt.matcher.button: 1
+URxvt*urlLauncher: firefox
+URxvt*cursorUnderline: false
+URxvt*loginShell: true
+URxvt*cursorBlink: true
+URxvt*visualBell:true
+
+! Window options
+URxvt*geometry: 80x24
+URxvt*internalBorder: 2
+URxvt*scrollBar: false
+URxvt*termName: rxvt-unicode
+
+! Scroll options
+URxvt*scrollTtyOutput: false
+URxvt*scrollTtyKeypress: true
+URxvt*scrollKey: true
+URxvt*scrollWithBuffer: false
+URxvt*saveLines: 5000
+URxvt*secondaryScroll: true
