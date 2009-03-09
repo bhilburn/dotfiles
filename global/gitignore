@@ -1,0 +1,30 @@
+# Personalized gitignore file I copy into projects I am working on and then
+# tweak as necessary.
+
+# git-ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+ *.[oad]
+ *~
+
+ # There are a ton of files created by autofoo and libtool that we don't care
+ # about.  Ignore all of them.
+ Makefile
+ Makefile.in
+ configure.in
+ aclocal.m4
+ config.guess
+ config.log
+ config.status
+ config.sub
+ configure
+ src/include/config.h
+ src/include/stamp-h1
+ install-sh
+ libtool
+ ltmain.sh
+ missing
+ depcomp
+ autom4te.cache/*
+
