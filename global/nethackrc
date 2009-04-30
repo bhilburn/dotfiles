@@ -1,3 +1,4 @@
+OPTIONS=DECgraphics
 # http://sartak.katron.org/misc/pbf/images/088.jpg
 OPTIONS=catname:Sgt. Grumbles
 # http://sartak.katron.org/misc/pbf/images/146.jpg
@@ -6,8 +7,8 @@ OPTIONS=horsename:Giga-Knight
 OPTIONS=dogname:Caffeinator
 
 OPTIONS=hilite_pet
-OPTIONS=fruit:brain
-OPTIONS=autopickup,pickup_types:$!/="+?
+#OPTIONS=fruit:brain
+OPTIONS=!autopickup,pickup_types:$!/="+?
 OPTIONS=disclose:+iagcv
 OPTIONS=!cmdassist,!help,!legacy,!news,suppress_alert:3.4.3
 OPTIONS=autodig,!prayconfirm,lootabc
@@ -34,7 +35,7 @@ OPTIONS=use_darkgray
 OPTIONS=paranoid_remove
 
 # interhack does this for me
-OPTIONS=!hp_monitor
+OPTIONS=hp_monitor
 
 # I encourage people to use my menucolors! It's why I have a version and date.
 
@@ -42,7 +43,7 @@ OPTIONS=!hp_monitor
 # last minor:     compatibility with the new nethack.alt.org's GNU (not POSIX)
 #                   regex library
 
-OPTIONS=!menucolors
+OPTIONS=color,menucolors
 
 #########
 # B/U/C #
