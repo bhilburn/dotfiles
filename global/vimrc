@@ -35,14 +35,15 @@ set smarttab
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
+set wrap
 "set nowrap
 
 " Filetype-specific formatting
 set formatoptions+=t,c,r,o,n
 
-au FileType c,cpp,h set cindent formatoptions+=ro noexpandtab
-au FileType c set omnifunc=ccomplete#Complete noexpandtab
-au FileType make set noexpandtab shiftwidth=8
+au FileType c,cpp,h set cindent formatoptions+=ro tw=80
+au FileType c set omnifunc=ccomplete#Complete tw=80
+au FileType make set noexpandtab shiftwidth=8 tw=80
 au FileType python set et sw=4 sts=4 ts=4 tw=80 ai
 au FileType html,xhtml set tw=0
 au FileType tex SPCheck
