@@ -55,16 +55,15 @@ au BufNewFile,BufRead .Xdefaults* set filetype=xdefaults
 
 " Key mappings
 nnoremap <silent> <F7> :Explore<CR>
-"map <silent> <F7> :TMiniBufExplorer<CR>
 nnoremap <silent> <F8> :TlistToggle<CR>
 nnoremap <silent> <F9> :tabnew<CR>
 nnoremap <silent> <F10> :tabp<CR>
 nnoremap <silent> <F11> :tabn<CR>
+"---------------- <F12> unmapped
 nnoremap ` '
 nnoremap ' `
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
-"---------------- <F12> mapped by project flag 'g'
 
 " Map ,s to show whitespace
 set listchars=tab:>-,trail:·,eol:$
@@ -74,7 +73,6 @@ nmap <silent> <leader>s :set nolist!<CR>
 set laststatus=2
 set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y\
 set shortmess+=aI
-
 hi StatusLine term=inverse cterm=NONE ctermfg=white ctermbg=black
 hi StatusLineNC term=none cterm=NONE ctermfg=darkgray ctermbg=black
 
@@ -125,10 +123,6 @@ let OmniCpp_MayCompleteDot = 1
 let OmniCpp_MayCompleteArrow = 1
 let OmniCpp_MayCompleteScope = 0
 let OmniCpp_SelectFirstItem = 0
-
-" Project plugin settings
-let g:proj_flags = 'imstgLST'
-let g:proj_window_width = 30
 
 " SuperTab plugin settings
 let g:SuperTabDefaultCompletionType = "<C-P>"

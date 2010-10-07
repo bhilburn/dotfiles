@@ -23,9 +23,9 @@ URxvt*foreground: white
 urxvt*background: rgba:0000/0000/0000/dddd
 
 ! Misc options
-URxvt*perl-ext-common: default,matcher
+URxvt*perl-ext-common: default,matcher,mark-urls
 URxvt.matcher.button: 1
-URxvt*urlLauncher: firefox
+URxvt*urlLauncher: chromium
 URxvt*cursorUnderline: false
 URxvt*loginShell: true
 URxvt*cursorBlink: true
