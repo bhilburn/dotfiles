@@ -1,46 +1,164 @@
-! URxvt import colour scheme
-#include ".Xdefaults.daedalus"
+#include ".Xdefaults.teh"
+/*include ".Xdefaults.daedalus"
+include ".Xdefaults.shiva"*/
 
-!!!!!!!!!!!!!!!!!!!!!
-! urxvt
-!!!!!!!!!!!!!!!!!!!!!
+/***********************************************
+ *          XTERM
+ **********************************************/
+XTerm*background:                 #000000
+XTerm*foreground:                 #FFFFFF
+XTerm*colorMode:                  On
+XTerm*colorBD:                    #FFFFFF
+!XTerm*colorBDMode:                On
+XTerm*colorUL:                    #FFFFFF
+XTerm*colorULMode:                On
+Xterm*dynamicColors:              On
+XTerm*metaSendsEscape:            True
+XTerm*vt100.scrollBar:            False
+XTerm*multiScroll:                on
+XTerm*jumpScroll:                 on
+xterm*SaveLines:                  2500
+XTerm*scrollBar:                  false
 
-! Font options
+
+/***********************************************
+ *          URXVT
+ **********************************************/
+
+/* colors */
+URxvt*background:           #121212
+URxvt*foreground:           #FFFFFF
+URxvt*cursorColor:          #EB122E
+URxvt*cursorColor2:         #252525
+URxvt*colorIT:              #FFFFFF
+URxvt*colorBD:              #FFFFFF
+URxvt*colorUL:              #FF8F00
+URxvt*colorRV:              #333333
+URxvt*underlineColor:       #0E0E0E
+URxvt*borderColor:          #0E0E0E
+URxvt*pointerColor:         #252525
+URxvt*pointerColor2:        #0092FF
+
+/* fonts */
 URxvt*font: xft:terminus:pixelsize=12:antialias=true:hinting=true
 URxvt*boldFont: xft:terminus:pixelsize=12:antialias=true:hinting=true
 urxvt*italicFont: xft:terminus:pixelsize=12:antialias=true:italic:autohint=true:hinting=true
 urxvt*bolditalicFont: xft:terminus:pixelsize=12:antialias=true:bold:italic:autohint=true:hinting=true
 Xft.dpi: 96
 
-! Coloring, shading, etc
-URxvt*depth: 32
-!URxvt*font: -*-terminus-medium-*-*-12-*-*-*-*-*-*-*
-!URxvt*transparent: true
-URxvt*tintColor: #000000
-URxvt*shading: 25 
-URxvt*foreground: white
-!URxvt*background: #242424
-urxvt*background: rgba:0000/0000/0000/dddd
+/* libs */
+URxvt*perl-lib:             /usr/lib/urxvt/perl
+URxvt*perl-ext-common:      default,matcher
+URxvt*perl-eval:            $^O
 
-! Misc options
-URxvt*perl-ext-common: default,matcher,mark-urls
-URxvt.matcher.button: 1
-URxvt*urlLauncher: chromium
-URxvt*cursorUnderline: false
-URxvt*loginShell: true
-URxvt*cursorBlink: true
-URxvt*visualBell:true
+/* matches */
+URxvt*urlLauncher:          chromium
+URxvt*matcher.button:       1
+URxvt*cutchars:             "()*,<>[]{}|'"
+URxvt*matcher.pattern.1:    \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt*matcher.launcher.1:   chromium
+URxvt*matcher.pattern.2:    \\B(/\\S+?):(\\d+)(?=:|$)
+URxvt*matcher.launcher.2:   gvim +$2 $1
 
-! Window options
-URxvt*geometry: 80x24
-URxvt*internalBorder: 2
-URxvt*scrollBar: false
-URxvt*termName: rxvt-unicode
+/* perl magic */
+URxvt.selection.pattern-0:        ( at .*? line \\d+[,.])
+URxvt.selection-autotransform.0:  s/^ at (.*?) line (\\d+)[,.]$/:e \\Q$1\E\\x0d:$2\\x0d/
 
-! Scroll options
-URxvt*scrollTtyOutput: false
-URxvt*scrollTtyKeypress: true
-URxvt*scrollKey: true
-URxvt*scrollWithBuffer: false
-URxvt*saveLines: 5000
-URxvt*secondaryScroll: true
+/* terminal stuff */
+URxvt*scrollKey:            true
+URxvt*scrollWithBuffer:     true
+URxvt*scrollBack:           true
+URxvt*scrollTtyOutput:      false
+URxvt*scrollTtyKeypress:    true
+URxvt*secondaryScroll:      true
+!URxvt*jumpScroll:           true
+!URxvt*skipScroll:           true
+URxvt*loginShell:           true
+URxvt*urgentOnBell:         true
+URxvt*saveLines:            1024
+!URxvt*termName:            rxvt-unicode
+URxvt*trippleclickwords:    true
+!URxvt*modifier:            (alt,meta,hyper,super,mod1,mod2,mod3,mod4,mod5)
+!URxvt*secondaryScreen:     true
+!URxvt*secondaryScroll:     true
+!URxvt*scrollstyle:          next
+URxvt*pasteableTabs:        true
+URxvt*pointerBlank:         true
+URxvt*pointerBlankDelay:    2
+!URxvt*hold:                 0
+!URxvt*chdir:                /home/scp1/devel
+
+/* eyecandy */
+!URxvt*transparent:          true
+!URxvt*shading:              9
+!URxvt*fading:              30%
+!URxvt*fadeColor:           #000000
+!URxvt*inheritPixmap:       true
+URxvt*scrollBar:            false
+URxvt*cursorBlink:         true
+!URxvt*reverseVideo:        true
+URxvt*depth:                32
+!URxvt.internalBorder:            0
+!URxvt.externalBorder:            0
+!URxvt*borderLess:           true
+!URxvt.lineSpace:                 3
+!URxvt*title:                laleh
+/*URxvt*blendType:           (add,alphablend,allanon), (averaging,
+                                  colorize, darken, diff, dissipate, hue,
+                                  lighten, overlay, saturate, screen, sub,
+                                  tint, value) */
+!URxvt*blurRadius:          (0-128)
+!URxvt*iconFile:            (file)
+
+
+/***********************************************
+ *          XFONTSEL
+ **********************************************/
+
+/* XFontSel settings */
+XFontSel*sampleText.background:       TEXTBG
+XFontSel*menu*showUnselectable:       false
+XFontSel*MenuButton.shadowWidth:      0
+XFontSel*Toggle*ToggleStyle:          check
+XFontSel*MenuButton*Justify:          left
+XFontSel*MenuButton*MenuButtonStyle:  select    
+.xfontsel.pane.commandBox.quitButton.background:  #252525
+.xfontsel.pane.commandBox.quitButton.foreground:  snow
+.xfontsel.pane.commandBox.ownButton.background:   orange3
+.xfontsel.pane.commandBox.ownButton.foreground:   snow
+.xfontsel.pane.commandBox.countLabel.background:  snow
+.xfontsel.pane.viewPort.sampleText.background:    #252525
+.xfontsel.pane.viewPort.sampleText.foreground:    snow
+.xfontsel.pane.fieldBox.field0.background:        #252525
+.xfontsel.pane.fieldBox.field0.foreground:        snow
+.xfontsel.pane.fieldBox.field1.background:        #252525
+.xfontsel.pane.fieldBox.field1.foreground:        snow
+.xfontsel.pane.fieldBox.field2.background:        #252525
+.xfontsel.pane.fieldBox.field2.foreground:        snow
+.xfontsel.pane.fieldBox.field3.background:        #252525
+.xfontsel.pane.fieldBox.field3.foreground:        snow
+.xfontsel.pane.fieldBox.field4.background:        #252525
+.xfontsel.pane.fieldBox.field4.foreground:        snow
+.xfontsel.pane.fieldBox.field5.background:        #252525
+.xfontsel.pane.fieldBox.field5.foreground:        snow
+.xfontsel.pane.fieldBox.field6.background:        #252525
+.xfontsel.pane.fieldBox.field6.foreground:        snow
+.xfontsel.pane.fieldBox.field7.background:        #252525
+.xfontsel.pane.fieldBox.field7.foreground:        snow
+.xfontsel.pane.fieldBox.field8.background:        #252525
+.xfontsel.pane.fieldBox.field8.foreground:        snow
+.xfontsel.pane.fieldBox.field9.background:        #252525
+.xfontsel.pane.fieldBox.field9.foreground:        snow
+.xfontsel.pane.fieldBox.field10.background:       #252525
+.xfontsel.pane.fieldBox.field10.foreground:       snow
+.xfontsel.pane.fieldBox.field11.background:       #252525
+.xfontsel.pane.fieldBox.field11.foreground:       snow
+.xfontsel.pane.fieldBox.field12.background:       #252525
+.xfontsel.pane.fieldBox.field12.foreground:       snow
+.xfontsel.pane.fieldBox.field13.background:       #252525
+.xfontsel.pane.fieldBox.field13.foreground:       snow
+.xfontsel.pane.fieldBox*foreground:               #000000
+.xfontsel.pane.fieldBox.MenuButton.borderWidth:   1
+.xfontsel.pane.fieldBox.MenuButton.internalHeight:1
+.xfontsel.pane.fieldBox.MenuButton.internalWidth: 2
+.xfontsel.pane.fieldBox.MenuButton.shapeStyle:    rectangle

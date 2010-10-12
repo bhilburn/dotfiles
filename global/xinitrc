@@ -11,10 +11,13 @@ test -z "$session" && session=$session_default
 urxvtd -q -o -f &
 
 # Turn numlock on
-[[ -x "/usr/bin/numlockx" ]] && numlockx &
+#[[ -x "/usr/bin/numlockx" ]] && numlockx &
 
 # Restore the previous background
 #eval `cat ~/.fehbg` &
+
+# Make sure we are in Dvorak
+setxkbmap dvorak &
 
 case $session in
     "gnome")
@@ -22,39 +25,23 @@ case $session in
         fusion-icon &
         exec gnome-session;;
 
-    "openbox")
-        #pypanel &
-        trayer --expand true --widthtype request --height 16 --edge top --align left &
-        tint &
-        conky &
-        alunn &
-        glipper-old &
-        gnome-settings-daemon &
-        thunar --daemon &
-        exec openbox-session;;
+    "stumpwm")
+#        xsetroot -bg "#121212" -mod 3 3 &
+#        xset fp+ /usr/share/fonts/*
+#        xset fp rehash
+        xmodmap $HOME/.Xmodmap &
+        xscreensaver -no-splash &
+        exec /usr/bin/stumpwm;;
 
-    "openbox-gnome")
-        exec openbox-gnome-session;;
+    "xmonad")
+        xsetroot -cursor_name left_ptr &
+#        zsh $HOME/bin/xmodshit &
+        xmonad;;
 
-    "kde")
-        exec startkde;;
+    "wmii")
+        zsh $HOME/bin/dzconky &
+        exec wmii;;
 
-    "awesome")
-        if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-            eval `dbus-launch --sh-syntax --exit-with-session`
-        fi
-
-        #xcompmgr -cC -t-2 -l-3 -r3 -o.30 &
-        thunar --daemon &
-        gnome-settings-daemon &
-        alunn &
-        glipper-old &
-#        sonata --hidden &
-
-        /usr/local/bin/awesome-status &
-        sleep 1
-#        trayer --expand true --widthtype request --height 16 --edge bottom --align right &
-        exec awesome;;
     *)
 
 esac
