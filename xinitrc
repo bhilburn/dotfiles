@@ -36,6 +36,9 @@ case $session in
     "xmonad")
         xsetroot -cursor_name left_ptr &
 #        zsh $HOME/bin/xmodshit &
+#
+        xmodmap $HOME/.Xmodmap &
+        xscreensaver -no-splash &
         xmonad;;
 
     "wmii")

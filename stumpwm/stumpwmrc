@@ -58,9 +58,14 @@
       *mode-line-foreground-color* "White"
       *mode-line-border-color* "darkgrey"
       *mode-line-timeout* 1
-      *mode-line-screen-position* :bottom
+      *mode-line-screen-position* :top
       *window-format* "^B^8*%n%s%m%30t :: ^7*"
-      *group-format* "%t")
+      *group-format* "%t"
+
+      *screen-mode-line-format*
+      (list "^6*::^n  %g  ^6*::^n%w^6* :: ^8*CPU: ^n%f %C ^3*%t ^6*::^n^r%M ^6*:: ^n%b ^6*:: ^n %l ^6*::^8 - "
+            '(:eval (run-shell-command "date +\"%T %d-%m-%Y\" | tr -d'[:cntrl:]'" t))))
+;(enable-mode-line (current-screen) (current-head) t)
 
 ;(setf *disk-usage-paths* '("/mnt/Books" "/mnt/Docs" "/mnt/Games" "/mnt/Movies_1" "/mnt/Movies_2" "/mnt/Movies_3" "/mnt/Music_1" "/mnt/Music_2/" "/mnt/Music_3" "/mnt/Music_4" "/mnt/Music_5" "/mnt/Mvids" "/mnt/Porn" "/mnt/TV" "/mnt/TV_2""))
 ;(setf stumpwm:*screen-mode-line-format*
@@ -127,7 +132,7 @@
 ;define-key *root-map* (kbd "m") "exec perl /home/scp1/bin/dmenurl")
 ;(define-key *root-map* (kbd "e") "exec sh /home/scp1/bin/dmenu.sh")
 (define-key *root-map* (kbd "c") "exec urxvtc")
-(define-key *root-map* (kbd "x") "exec urxvtc")
+;(define-key *root-map* (kbd "x") "exec urxvtc")
 ;(define-key *root-map* (kbd "v") "exec urxvtc -e screen -x; screen -X screen zsh")
 ;(define-key *root-map* (kbd "x") "exec urxvtc -name URxvt.shiva")
 ;; deprecated - using self made daemon instead
@@ -161,26 +166,26 @@
 ;(define-key *root-map* (kbd "y") "exec radioc pause")
 ;(define-key *root-map* (kbd "u") "exec echo 'pt_step 1' > $HOME/.mplayer/fifo")
 ; control firefox, remotely
-(define-key *root-map* (kbd "L") "exec fxr forward")
-(define-key *root-map* (kbd "H") "exec fxr back")
-(define-key *root-map* (kbd "J") "exec fxr refresh")
+;(define-key *root-map* (kbd "L") "exec fxr forward")
+;(define-key *root-map* (kbd "H") "exec fxr back")
+;(define-key *root-map* (kbd "J") "exec fxr refresh")
 
-(define-key *top-map* (kbd "F1") "exec radioc change dingata")
-(define-key *top-map* (kbd "F2") "exec radioc change gabber")
-(define-key *top-map* (kbd "F3") "exec radioc change hardstyle")
-(define-key *top-map* (kbd "F5") "exec radioc change hardcore")
-(define-key *top-map* (kbd "F6") "exec radioc change psy2")
-(define-key *top-map* (kbd "F7") "exec radioc change psy6")
-(define-key *top-map* (kbd "F8") "exec radioc change psy4")
-(define-key *top-map* (kbd "F9") "exec radioc change p1")
-(define-key *top-map* (kbd "F10") "exec radioc change p2")
-(define-key *top-map* (kbd "F11") "exec radioc change p3")
-(define-key *top-map* (kbd "F12") "exec radioc change p4")
+;(define-key *top-map* (kbd "F1") "exec radioc change dingata")
+;(define-key *top-map* (kbd "F2") "exec radioc change gabber")
+;(define-key *top-map* (kbd "F3") "exec radioc change hardstyle")
+;(define-key *top-map* (kbd "F5") "exec radioc change hardcore")
+;(define-key *top-map* (kbd "F6") "exec radioc change psy2")
+;(define-key *top-map* (kbd "F7") "exec radioc change psy6")
+;(define-key *top-map* (kbd "F8") "exec radioc change psy4")
+;(define-key *top-map* (kbd "F9") "exec radioc change p1")
+;(define-key *top-map* (kbd "F10") "exec radioc change p2")
+;(define-key *top-map* (kbd "F11") "exec radioc change p3")
+;(define-key *top-map* (kbd "F12") "exec radioc change p4")
 
-(define-key *top-map* (kbd "KP_Begin") "exec echo vo_fullscreen > $HOME/.mplayer/fifo")
-(define-key *top-map* (kbd "KP_Right") "exec echo 'pt_step 1' > $HOME/.mplayer/fifo")
-(define-key *top-map* (kbd "KP_Insert") "exec echo pause > $HOME/.mplayer/fifo")
-(define-key *top-map* (kbd "KP_Up") "exec mplayer -slave -input file=$HOME/.mplayer/fifo /mnt/Porn/*/* /mnt/Porn/* -shuffle")
+;(define-key *top-map* (kbd "KP_Begin") "exec echo vo_fullscreen > $HOME/.mplayer/fifo")
+;(define-key *top-map* (kbd "KP_Right") "exec echo 'pt_step 1' > $HOME/.mplayer/fifo")
+;(define-key *top-map* (kbd "KP_Insert") "exec echo pause > $HOME/.mplayer/fifo")
+;(define-key *top-map* (kbd "KP_Up") "exec mplayer -slave -input file=$HOME/.mplayer/fifo /mnt/Porn/*/* /mnt/Porn/* -shuffle")
 
 ;;; The End
 
