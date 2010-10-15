@@ -11,5 +11,5 @@ Config { font = "-*-terminus-*-*-*-*-12-*-*-*-*-*-*-u",
                     Run StdinReader],
        sepChar = "%",
        alignSep = "}{",
-       template = " %StdinReader% }{%KBCB% <fc=#429942>|</fc>  %cpu% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %date%"
+       template = " %StdinReader% }{%KBCB% <fc=#429942>|</fc>  %cpu% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %eth0% <fc=#429942>|</fc> %date%"
        }
