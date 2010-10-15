@@ -37,8 +37,8 @@ import XMonad.Layout.Tabbed
 
 main :: IO ()
 main = do
-  h1 <- spawnPipe "xmobar -x 0"
-  h2 <- spawnPipe "xmobar -x 1"
+  h1 <- spawnPipe "xmobar -x 0 .xmobarrc_left"
+  h2 <- spawnPipe "xmobar -x 1 .xmobarrc_right"
 --  d1 <- spawnPipe myDzen
 --  d2 <- spawnPipe myDzen2
   xmonad $ defaults h1 h2
