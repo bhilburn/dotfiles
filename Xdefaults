@@ -92,7 +92,6 @@ URxvt*pointerBlankDelay:    2
 URxvt*depth:                32
 URxvt*background:           rgba:1111/1111/1111/dddd
 URxvt*tintColor:            white
-URxvt*inheritPixmap:       true
 
 /* The following are settings for pseudo-transparency. */
 !URxvt*transparent:          true
