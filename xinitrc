@@ -14,7 +14,8 @@ urxvtd -q -o -f &
 [[ -x "/usr/bin/numlockx" ]] && numlockx &
 
 # Restore the previous background
-eval `cat ~/.fehbg` &
+#eval `cat ~/.fehbg` &
+nitrogen --restore &
 
 # Make sure we are in Dvorak
 setxkbmap dvorak &
