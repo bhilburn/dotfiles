@@ -1,18 +1,33 @@
 " Turn on syntax highlighting
 syntax on
 
+" General Options
+set nocompatible
+set autoread
+set undofile
+
 " Background, colorscheme, etc
 set background=dark
+set t_Co=256
+colorscheme desert256
 
 " Utility features
 set ruler
 set number
-"set cursorline
+set cursorline
 set history=1000
 set hidden
 set title
 set scrolloff=15
 set visualbell
+set undolevels=512
+set autoindent
+set showmatch
+
+" Wildmode options, for command-line tab completion
+set wildmenu
+set wildchar=<Tab>
+set wildmode=list:longest,full
 
 " Set the terminal font encoding
 set encoding=utf-8
@@ -22,8 +37,6 @@ set termencoding=utf-8
 filetype on
 filetype plugin on
 filetype indent on
-set autoindent
-set showmatch
 
 " Mouse options
 set mouse=a
@@ -49,9 +62,11 @@ au FileType html,xhtml set tw=0
 au FileType tex SPCheck
 au FileType tex let dialect='US'
 au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
-
 au BufRead,BufNewFile PKGBUILD set ts=2 sts=2 et sw=2
+
+" Filetype recognitition
 au BufNewFile,BufRead .Xdefaults* set filetype=xdefaults
+au BufNewFile,BufRead *-MIB.txt set filetype=mib
 
 " Key mappings
 nnoremap <silent> <F7> :Explore<CR>
@@ -73,6 +88,7 @@ nmap <silent> <leader>s :set nolist!<CR>
 set laststatus=2
 set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y\
 set shortmess+=aI
+set showcmd
 hi StatusLine term=inverse cterm=NONE ctermfg=white ctermbg=black
 hi StatusLineNC term=none cterm=NONE ctermfg=darkgray ctermbg=black
 
@@ -94,7 +110,7 @@ endif
 hi Folded term=standout ctermfg=3 ctermbg=0
 
 " Searching & Replacing
-set nohlsearch
+set hlsearch
 set ignorecase
 set smartcase
 set incsearch
