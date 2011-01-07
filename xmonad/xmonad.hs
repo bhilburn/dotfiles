@@ -268,14 +268,22 @@ myLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full ||| tabbed shrinkText t
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 --
+--myManageHook = composeAll
+--    [ className =? "Chromium"                       --> doFloat
+--    , className =? "com-mathworks-util-PostVMInit"  --> doFloat
+--    , resource  =? "desktop_window"                 --> doIgnore
+--    , resource  =? "kdesktop"                       --> doIgnore 
+--   , manageDocks
+--    ]
+
+-- This configuration will auto-float everything except terminals.
 myManageHook = composeAll
-    [ className =? "Chromium"                       --> doFloat
-    , className =? "com-mathworks-util-PostVMInit"  --> doFloat
+    [ className =? "URxvt"                          --> unfloat
     , resource  =? "desktop_window"                 --> doIgnore
-    , resource  =? "kdesktop"                       --> doIgnore 
-    , manageDocks
-    ]
- 
+    , resource  =? "kdesktop"                       --> doIgnore ]
+    <+> doFloat <+> manageDocks
+    where unfloat = ask >>= doF . W.sink
+
 ------------------------------------------------------------------------
 -- Event handling
  
