@@ -2,8 +2,50 @@
 " Ben Hilburn
 " bhilburn@gmail.com
 "
+" Years in the making. Plugins configured:
+"   Taglist
+"   OmniCPPComplete
+"   SuperTab
+"   Yankring
+"   NerdTree
+"   NerdCommenter
+"   RainbowParentheses
+"   Ack
+"   SnipMate
+"   Syntastic
+"   Vim-Repeat
+"   Matchit
+"
+" Sets the leader key to ',', and creates a lot of keymappings with it. Current
+" leader-key commands:
+"   ,<space>: Switch off the last search to get rid of highlights
+"   ,v: Re-select text that was just pasted
+"   ,g - Create new vsplit, switch to it.
+"   ,s - Show whitespace
+"   ,W - Clean whitespace
+"   ,r - Toggle Rainbows
+"   ,/ - Open QuickFix window for last search
+"
+" Current Function Key mapping:
+"   F1: Taglist
+"   F2: NerdTree
+"   F3: ErrorsToggle (func) - Only works with Python, at the moment.
+"   F4: QFixToggle (func)
+"   F5: Open
+"   F6: Open
+"   F7: Open
+"   F8: Paste Toggle
+"   F9: Vim Explorer
+"   F10: Previous tab
+"   F11: Next Tab
+"   F12: New Tab
+"
+"   Other random key mappings:
+"   Tab: mapped to '%' for bracket-matching
+"   S-Tab: SuperTab completion
+"   Space: Toggle folds
+"
 " Recently re-done, pulling some nifty features from Steve Losh's vimrc:
-" Author: Steve Losh <steve@stevelosh.com>
 " Source: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
 
 " To enable Pathogen, we have to first disable the filetype, load the bundles,
@@ -91,7 +133,7 @@ map <leader><space> :noh<cr>
 " Background, colorscheme, etc
 set background=dark
 set t_Co=256
-colorscheme molokai
+colorscheme molokai-losh
 syntax on
 
 " Regex fixes
@@ -165,7 +207,6 @@ noremap <leader>g <C-w>v<C-w>l
 " Map ,s to show whitespace so I can easily fix mixed tabs and spaces and
 " other such nonsense.
 set listchars=tab:>-,trail:·
-",eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
 " Folding Settings
@@ -203,10 +244,6 @@ endfunction " }}}
 set foldtext=MyFoldText()
 
 " Losh's fixes for annoying keys; his comments remain intact for posterity.
-" Fuck you, help key.
-noremap <F1> :set invfullscreen<CR>
-inoremap <F1> <ESC>:set invfullscreen<CR>a
-
 " Fuck you too, manual key.
 nnoremap K <nop>
 
@@ -264,6 +301,7 @@ set fillchars=vert:│
 set guicursor=n-c:block-Cursor-blinkon0
 set guicursor+=v:block-vCursor-blinkon0
 set guicursor+=i-ci:ver20-iCursor
+set guioptions+=m
 
 " Better Completion
 set completeopt=longest,menuone
@@ -278,8 +316,17 @@ nmap <leader>r :RainbowParenthesesToggle<CR>
 map <F2> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$', 'whoosh_index', 'xapian_index', '.*.pid', 'monitor.py', '.*-fixtures-.*.json', '.*\.o']
 
+" Taglist is still awesome.
+inoremap <F1> :TlistToggle<CR>
+nnoremap <F1> :TlistToggle<CR>
+vnoremap <F1> :TlistToggle<CR>
+
 " Enable ViM's included LISP prettiness
 let g:lisp_rainbow = 1
+
+" Syntastic Configuration
+let g:syntastic_enable_signs = 1
+let g:syntastic_disabled_filetypes = ['html']
 
 " Useful for editing syntax files. Thanks, Losh.
 " Show the stack of syntax hilighting classes affecting whatever is under the
@@ -317,9 +364,8 @@ function! QFixToggle(forced) " {{{
   endif
 endfunction " }}}
 
-nmap <silent> <f3> :ErrorsToggle<cr>
-nmap <silent> <f4> :QFixToggle<cr>
-
+nmap <silent> <F3> :ErrorsToggle<cr>
+nmap <silent> <F4> :QFixToggle<cr>
 
 " Taglist settings
 let Tlist_Process_File_Always = 1
@@ -350,4 +396,3 @@ let g:SuperTabDefaultCompletionType = "<C-P>"
 let g:SuperTabRetainCompletionType = 1
 let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<s-c-tab>'
-
