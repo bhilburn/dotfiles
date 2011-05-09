@@ -3,7 +3,7 @@
 " bhilburn@gmail.com
 "
 " Years in the making. Getting better through Science.
-
+"
 " Plugins configured:
 "   Taglist: (included in most ViM installs)
 "   OmniCPPComplete: (included in most ViM installs)
@@ -20,6 +20,11 @@
 "
 " Note that some of the more popular plugins may be available through your
 " distro's package manager.
+"
+" This configuration file also sets certain directories for backups, undo files,
+" and the like. These directories must be manually created before they will work
+" - otherwise, ViM will choke when attempting to write to them. Starts around
+"   line 138 or so.
 "
 " Sets the leader key to ',', and creates a lot of keymappings with it. Current
 " leader-key commands:
@@ -62,7 +67,7 @@
 " Source: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
 
 " To enable Pathogen, we have to first disable the filetype, load the bundles,
-" nad then re-enable.
+" and then re-enable.
 filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
@@ -79,8 +84,7 @@ set showmode
 set showcmd
 set ruler
 set number
-set nonumber
-set norelativenumber
+set numberwidth=4
 set cursorline
 set hidden
 set title
@@ -224,38 +228,25 @@ set listchars=tab:>-,trail:·
 nmap <silent> <leader>s :set nolist!<CR>
 
 " Folding Settings
-set foldlevelstart=0
-set foldenable 
-set foldmethod=indent 
+set foldlevelstart=100
 set foldlevel=100 
+set foldcolumn=4
+set foldenable
+set foldmethod=indent
 set foldopen-=search
 set foldopen-=undo
 
-" Spacebar to toggle folds.
+" Spacebar to toggle folds the cursor is over
 nnoremap <Space> za
 vnoremap <Space> za
+
+" Set ,<space> to toggle all folds on/off
+nnoremap <leader>z zi
+vnoremap <leader>z zi
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
 nnoremap zO zCzO
-
-" Also ripped this function directly from Steve Losh:
-function! MyFoldText() " {{{
-    let line = getline(v:foldstart)
-
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 3
-    let foldedlinecount = v:foldend - v:foldstart
-
-    " expand tabs into spaces
-    let onetab = strpart('          ', 0, &tabstop)
-    let line = substitute(line, '\t', onetab, 'g')
-
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
-endfunction " }}}
-set foldtext=MyFoldText()
 
 " Losh's fixes for annoying keys; his comments remain intact for posterity.
 " Fuck you too, manual key.
@@ -264,8 +255,17 @@ nnoremap K <nop>
 " Stop it, hash key.
 inoremap # X<BS>#
 
+" Formatting options:
+"   t: Auto-wrap text
+"   c: Auto-wrap comments
+"   r: Auto-insert comment leader after <enter>
+"   o: Auto-insert comment leader after o or O
+"   q: Allow formatting of comments with 'gq'
+"   n: Recognize lists and indent
+"   1: If possible, break lines before one-letter words, not after
+set formatoptions+=t,c,r,o,q,n,1
+
 " Filetype-specific formatting
-set formatoptions+=t,c,r,o,n
 au FileType c,cpp,h set cindent formatoptions+=ro foldmethod=syntax
 au FileType c set omnifunc=ccomplete#Complete
 au FileType make set noexpandtab shiftwidth=8
@@ -352,7 +352,7 @@ function! SynStack() " {{{
 
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-nmap <M-S> :call SynStack()<CR>
+nmap <M-S> :call SynStack()<CR> " }}}
 
 " Error toggles, again, from Steve Losh
 command! ErrorsToggle call ErrorsToggle()
