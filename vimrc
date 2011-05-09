@@ -35,6 +35,7 @@
 "   ,W - Clean whitespace
 "   ,r - Toggle Rainbows
 "   ,/ - Open QuickFix window for last search
+"   ,z - Disable / Enable folding
 "
 " Current Function Key mapping:
 "   F1: Taglist
@@ -59,7 +60,7 @@
 " Other random key mappings:
 "   Tab: mapped to '%' for bracket-matching
 "   S-Tab: SuperTab completion
-"   Space: Toggle folds
+"   Space: Toggle fold under the cursor
 "
 " Note that this file contains some configuration options for gViM as well.
 "
