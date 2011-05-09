@@ -3,27 +3,31 @@
 "               by Martin Krischik and others.  This version cleans things up,
 "               simplifies a few things, and changes "parenthsis" to
 "               "parentheses".
+"
+"               This version has been edited by bhilburn to enable rainbows in
+"               terminal ViM instances. Also, all types of rainbow highlighting
+"               are now activated by default: () [] {} <>
 "------------------------------------------------------------------------------
 
 " Section: highlight {{{1
 
 function! rainbow_parentheses#Activate()
-    highlight default level1c   guifg=OrangeRed1
-    highlight default level2c   guifg=LightGoldenRod1
-    highlight default level3c   guifg=DeepSkyBlue1
-    highlight default level4c   guifg=HotPink1
-    highlight default level5c   guifg=chartreuse1
-    highlight default level6c   guifg=OrangeRed1
-    highlight default level7c   guifg=LightGoldenRod1
-    highlight default level8c   guifg=DeepSkyBlue1
-    highlight default level9c   guifg=HotPink1
-    highlight default level10c  guifg=chartreuse1
-    highlight default level11c  guifg=OrangeRed1
-    highlight default level12c  guifg=LightGoldenRod1
-    highlight default level13c  guifg=DeepSkyBlue1
-    highlight default level14c  guifg=HotPink1
-    highlight default level15c  guifg=chartreuse1
-    highlight default level16c  guifg=Yellow
+    highlight default level1c   ctermfg=red guifg=red
+    highlight default level2c   ctermfg=cyan guifg=orange
+    highlight default level3c   ctermfg=yellow guifg=yellow
+    highlight default level4c   ctermfg=green guifg=green
+    highlight default level5c   ctermfg=blue guifg=chartreuse1
+    highlight default level6c   ctermfg=magenta guifg=OrangeRed1
+    highlight default level7c   ctermfg=red guifg=LightGoldenRod1
+    highlight default level8c   ctermfg=cyan guifg=DeepSkyBlue1
+    highlight default level9c   ctermfg=yellow guifg=HotPink1
+    highlight default level10c  ctermfg=green guifg=chartreuse1
+    highlight default level11c  ctermfg=blue guifg=OrangeRed1
+    highlight default level12c  ctermfg=magenta guifg=LightGoldenRod1
+    highlight default level13c  ctermfg=red guifg=DeepSkyBlue1
+    highlight default level14c  ctermfg=cyan guifg=HotPink1
+    highlight default level15c  ctermfg=yellow guifg=chartreuse1
+    highlight default level16c  ctermfg=green guifg=Yellow
     let s:rainbow_paren_active = 1
 endfunction
 
@@ -39,6 +43,9 @@ endfunction
 function! rainbow_parentheses#Toggle ()
     if !exists('s:rainbow_paren_active')
         call rainbow_parentheses#LoadRound()
+        call rainbow_parentheses#LoadSquare()
+        call rainbow_parentheses#LoadBraces()
+        call rainbow_parentheses#LoadChevrons()
     endif
     if s:rainbow_paren_active != 0
         call rainbow_parentheses#Clear()
