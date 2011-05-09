@@ -2,24 +2,29 @@
 " Ben Hilburn
 " bhilburn@gmail.com
 "
-" Years in the making. Plugins configured:
-"   Taglist
-"   OmniCPPComplete
-"   SuperTab
-"   Yankring
-"   NerdTree
-"   NerdCommenter
-"   RainbowParentheses
-"   Ack
-"   SnipMate
-"   Syntastic
-"   Vim-Repeat
-"   Matchit
+" Years in the making. Getting better through Science.
+
+" Plugins configured:
+"   Taglist: (included in most ViM installs)
+"   OmniCPPComplete: (included in most ViM installs)
+"   SuperTab: http://www.vim.org/scripts/script.php?script_id=182
+"   Yankring: http://www.vim.org/scripts/script.php?script_id=1234
+"   NerdTree: https://github.com/scrooloose/nerdtree
+"   NerdCommenter: https://github.com/scrooloose/nerdcommenter
+"   RainbowParentheses: https://bitbucket.org/sjl/dotfiles/src/tip/vim/bundle/rainbow/
+"   Ack: https://github.com/mileszs/ack.vim
+"   SnipMate: https://github.com/msanders/snipmate.vim
+"   Syntastic: https://github.com/scrooloose/syntastic
+"   Vim-Repeat: https://github.com/tpope/vim-repeat
+"   Matchit: http://www.vim.org/scripts/script.php?script_id=39
+"
+" Note that some of the more popular plugins may be available through your
+" distro's package manager.
 "
 " Sets the leader key to ',', and creates a lot of keymappings with it. Current
 " leader-key commands:
-"   ,<space>: Switch off the last search to get rid of highlights
-"   ,v: Re-select text that was just pasted
+"   ,<space> - Switch off the last search to get rid of highlights
+"   ,v - Re-select text that was just pasted
 "   ,g - Create new vsplit, switch to it.
 "   ,s - Show whitespace
 "   ,W - Clean whitespace
@@ -51,6 +56,8 @@
 "   S-Tab: SuperTab completion
 "   Space: Toggle folds
 "
+" Note that this file contains some configuration options for gViM as well.
+"
 " Recently re-done, pulling some nifty features from Steve Losh's vimrc:
 " Source: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
 
@@ -60,7 +67,8 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
-" Ignore compatibility issues with Vi.
+" Ignore compatibility issues with Vi. Really don't know why ViM still defaults
+" to this. Especially gViM.
 set nocompatible
 
 " General Options
