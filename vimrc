@@ -125,6 +125,9 @@ set virtualedit+=block
 nnoremap Y y$
 nnoremap D d$
 
+" Reselect text that was just pasted.
+nnoremap <leader>v V`]
+
 " Open a Quickfix window for the last search
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
