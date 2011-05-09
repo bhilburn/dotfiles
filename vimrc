@@ -40,7 +40,13 @@
 "   F11: Next Tab
 "   F12: New Tab
 "
-"   Other random key mappings:
+" Navigation mappings to get around C-w <nav>
+"   C-h: Move to left window
+"   C-l: Move to right window
+"   C-j: Move down one window
+"   C-k: Move up one window
+"
+" Other random key mappings:
 "   Tab: mapped to '%' for bracket-matching
 "   S-Tab: SuperTab completion
 "   Space: Toggle folds
@@ -198,10 +204,10 @@ nnoremap <m-Up> :cprevious<cr>zvzz
 " }}}
 
 " Easy buffer navigation instead of the whole Ctrl-w crap.
-noremap <C-j>  <C-w>h
-noremap <C-k>  <C-w>j
-noremap <C-l>  <C-w>k
-noremap <C-g>  <C-w>l
+noremap <C-j>  <C-w>j
+noremap <C-k>  <C-w>k
+noremap <C-l>  <C-w>l
+noremap <C-h>  <C-w>h
 noremap <leader>g <C-w>v<C-w>l
 
 " Map ,s to show whitespace so I can easily fix mixed tabs and spaces and
