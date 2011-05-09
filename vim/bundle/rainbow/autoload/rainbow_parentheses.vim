@@ -12,6 +12,11 @@
 " Section: highlight {{{1
 
 function! rainbow_parentheses#Activate()
+    call rainbow_parentheses#LoadRound()
+    call rainbow_parentheses#LoadSquare()
+    call rainbow_parentheses#LoadBraces()
+    call rainbow_parentheses#LoadChevrons()
+
     highlight default level1c   ctermfg=red guifg=red
     highlight default level2c   ctermfg=cyan guifg=orange
     highlight default level3c   ctermfg=yellow guifg=yellow

@@ -1,1 +1,1 @@
-call rainbow_parentheses#Toggle()
+call rainbow_parentheses#Activate()

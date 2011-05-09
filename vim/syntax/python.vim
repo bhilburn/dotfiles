@@ -5,4 +5,4 @@ syn region pythonDocString      matchgroup=Normal start=+[uU]\="""+ end=+"""+ co
 syn region pythonDocString      matchgroup=Normal start=+[uU]\='''+ end=+'''+ contains=pythonEscape,@Spell contained
 hi def link pythonDocString     Comment
 
-call rainbow_parentheses#Toggle()
+call rainbow_parentheses#Activate()
