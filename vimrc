@@ -11,12 +11,18 @@
 "   Yankring: http://www.vim.org/scripts/script.php?script_id=1234
 "   NerdTree: https://github.com/scrooloose/nerdtree
 "   NerdCommenter: https://github.com/scrooloose/nerdcommenter
-"   RainbowParentheses: https://bitbucket.org/sjl/dotfiles/src/tip/vim/bundle/rainbow/
+"   RainbowParentheses: http://git.hokietux.net/?p=configs.git&a=tree&f=vim/bundle/rainbow
 "   Ack: https://github.com/mileszs/ack.vim
 "   SnipMate: https://github.com/msanders/snipmate.vim
 "   Syntastic: https://github.com/scrooloose/syntastic
 "   Vim-Repeat: https://github.com/tpope/vim-repeat
 "   Matchit: http://www.vim.org/scripts/script.php?script_id=39
+"
+" Note regarding RainbowParentheses:
+"   There are many versions of this plugin. The one linked above is a version
+"   stored in my git tree. I took Steve Losh's version, which works for gViM,
+"   added definitions for terminal instances of ViM, and enabled all
+"   bracket-matches by default.
 "
 " Note that some of the more popular plugins may be available through your
 " distro's package manager.
@@ -324,8 +330,11 @@ inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-p> pumvisible() ? '<C-n>'  : '<C-n><C-r>=pumvisible() ? "\<lt>up>" : ""<CR>'
 inoremap <expr> <C-n> pumvisible() ? '<C-n>'  : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
-" Rainbow parentheses
+" Rainbow parentheses, which I love, so loading by default. Note that because
+" syntax loading wipes out the rainbows, in order to have them 'on', by default,
+" you must create an additional syntax file for that language.
 nmap <leader>r :RainbowParenthesesToggle<CR>
+runtime plugin/rainbow_parentheses.vim
 
 " NERDTree settings
 map <F2> :NERDTreeToggle<cr>
