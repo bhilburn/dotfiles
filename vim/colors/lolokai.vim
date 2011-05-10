@@ -11,7 +11,7 @@
 hi clear
 
 set background=dark
-let g:colors_name="molokai"
+let g:colors_name="lolokai"
 
 " Basic Layout {{{
 hi Normal          guifg=#F8F8F2 guibg=#1B1E1F
