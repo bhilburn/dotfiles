@@ -12,11 +12,6 @@
 " Section: highlight {{{1
 
 function! rainbow_parentheses#Activate()
-    call rainbow_parentheses#LoadRound()
-    call rainbow_parentheses#LoadSquare()
-    call rainbow_parentheses#LoadBraces()
-    call rainbow_parentheses#LoadChevrons()
-
     highlight default levelr1c   ctermfg=red guifg=red
     highlight default levelr2c   ctermfg=cyan guifg=orange
     highlight default levelr3c   ctermfg=yellow guifg=yellow
@@ -84,6 +79,11 @@ function! rainbow_parentheses#Activate()
     highlight default levelc14c  ctermfg=cyan guifg=HotPink1
     highlight default levelc15c  ctermfg=yellow guifg=chartreuse1
     highlight default levelc16c  ctermfg=green guifg=Yellow
+
+    call rainbow_parentheses#LoadRound()
+    call rainbow_parentheses#LoadSquare()
+    call rainbow_parentheses#LoadBraces()
+    call rainbow_parentheses#LoadChevrons()
 
     let s:rainbow_paren_active = 1
 endfunction
