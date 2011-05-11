@@ -150,7 +150,7 @@ if &t_Co > 255
    hi Folded          ctermfg=67  ctermbg=233
    hi Function        ctermfg=118
    hi Identifier      ctermfg=208
-   hi Ignore          ctermfg=244 ctermbg=232
+   hi Ignore          ctermfg=201 ctermbg=232
    hi IncSearch       ctermfg=193 ctermbg=16
 
    hi Keyword         ctermfg=212               cterm=bold
@@ -182,7 +182,9 @@ if &t_Co > 255
    hi SpecialChar     ctermfg=199               cterm=bold
    hi SpecialComment  ctermfg=185               cterm=bold
    hi Special         ctermfg=81  ctermbg=232
-   hi SpecialKey      ctermfg=245
+
+   " Affects showing 'whitespace'.
+   hi SpecialKey      ctermfg=201
 
    hi Statement       ctermfg=168               cterm=bold
    hi StatusLine      ctermfg=244 ctermbg=253
