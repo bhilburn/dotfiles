@@ -186,6 +186,7 @@ if &t_Co > 255
    " Affects showing 'whitespace'.
    hi SpecialKey      ctermfg=201
 
+   " One of the primary colors, used for doxy-briefs as well.
    hi Statement       ctermfg=168               cterm=bold
    hi StatusLine      ctermfg=244 ctermbg=253
    hi StatusLineNC    ctermfg=244 ctermbg=232
@@ -197,7 +198,9 @@ if &t_Co > 255
 
    hi Typedef         ctermfg=37
    hi Type            ctermfg=81                cterm=none
-   hi Underlined      ctermfg=244               cterm=underline
+
+   " Affects 'parameters' in doxy-comments.
+   hi Underlined      ctermfg=190               cterm=underline
 
    hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
    hi VisualNOS       ctermfg=45  ctermbg=19
