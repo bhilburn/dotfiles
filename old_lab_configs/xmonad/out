@@ -1,0 +1,92 @@
+
+
+This is a pre-release version of the X server from The X.Org Foundation.
+It is not supported in any way.
+Bugs may be filed in the bugzilla at http://bugs.freedesktop.org/.
+Select the "xorg" product for bugs you find in this release.
+Before reporting bugs in pre-release versions please check the
+latest version in the X.Org Foundation git repository.
+See http://wiki.x.org/wiki/GitPage for git access instructions.
+
+X.Org X Server 1.10.3.901 (1.10.4 RC 1)
+Release Date: 2011-07-29
+X Protocol Version 11, Revision 0
+Build Operating System: Linux 3.0.0-ARCH x86_64 
+Current Operating System: Linux glados 3.0-ARCH #1 SMP PREEMPT Tue Aug 30 08:53:25 CEST 2011 x86_64
+Kernel command line: root=/dev/sda2 ro
+Build Date: 08 August 2011  08:24:13AM
+ 
+Current version of pixman: 0.22.2
+	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+(==) Log file: "/var/log/Xorg.0.log", Time: Thu Sep 15 14:28:37 2011
+(==) Using config directory: "/etc/X11/xorg.conf.d"
+Bad _NET_DESKTOP with data[0]=-1
+printTempInfo:1: command not found: acpi
+Bad _NET_DESKTOP with data[0]=-1
+printBattery:1: command not found: acpi
+printBattery:2: command not found: acpi
+usage: dbar [-w <pixel>] [-h <pixel>] [-fg <color>] [-bg <color>] [-min <minvalue>] [-max <maxvalue>] [-l <string>] [-nonl] [-o]
+printTempInfo:1: command not found: acpi
+printBattery:1: command not found: acpi
+printBattery:2: command not found: acpi
+usage: dbar [-w <pixel>] [-h <pixel>] [-fg <color>] [-bg <color>] [-min <minvalue>] [-max <maxvalue>] [-l <string>] [-nonl] [-o]
+printTempInfo:1: command not found: acpi
+printBattery:1: command not found: acpi
+printBattery:2: command not found: acpi
+usage: dbar [-w <pixel>] [-h <pixel>] [-fg <color>] [-bg <color>] [-min <minvalue>] [-max <maxvalue>] [-l <string>] [-nonl] [-o]
+printTempInfo:1: command not found: acpi
+printBattery:1: command not found: acpi
+printBattery:2: command not found: acpi
+
+** (gnome-screensaver:32305): WARNING **: Couldn't get presence status: The name org.gnome.SessionManager was not provided by any .service files
+
+(gnome-power-manager:32304): Gdk-CRITICAL **: gdk_visual_get_red_pixel_details: assertion `GDK_IS_VISUAL (visual)' failed
+
+(gnome-power-manager:32304): Gdk-CRITICAL **: gdk_visual_get_green_pixel_details: assertion `GDK_IS_VISUAL (visual)' failed
+
+(gnome-power-manager:32304): Gdk-CRITICAL **: gdk_visual_get_blue_pixel_details: assertion `GDK_IS_VISUAL (visual)' failed
+usage: dbar [-w <pixel>] [-h <pixel>] [-fg <color>] [-bg <color>] [-min <minvalue>] [-max <maxvalue>] [-l <string>] [-nonl] [-o]
+printTempInfo:1: command not found: acpi
+printBattery:1: command not found: acpi
+printBattery:2: command not found: acpi
+
+** (gnome-settings-daemon:32303): WARNING **: Unable to register client: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.gnome.SessionManager was not provided by any .service files
+usage: dbar [-w <pixel>] [-h <pixel>] [-fg <color>] [-bg <color>] [-min <minvalue>] [-max <maxvalue>] [-l <string>] [-nonl] [-o]
+printTempInfo:1: command not found: acpi
+printBattery:1: command not found: acpi
+printBattery:2: command not found: acpi
+
+(gnome-settings-daemon:32303): Gdk-CRITICAL **: gdk_visual_get_red_pixel_details: assertion `GDK_IS_VISUAL (visual)' failed
+
+(gnome-settings-daemon:32303): Gdk-CRITICAL **: gdk_visual_get_green_pixel_details: assertion `GDK_IS_VISUAL (visual)' failed
+
+(gnome-settings-daemon:32303): Gdk-CRITICAL **: gdk_visual_get_blue_pixel_details: assertion `GDK_IS_VISUAL (visual)' failed
+
+(gnome-settings-daemon:32303): media-keys-plugin-WARNING **: Grab failed for some keys, another application may already have access the them.
+usage: dbar [-w <pixel>] [-h <pixel>] [-fg <color>] [-bg <color>] [-min <minvalue>] [-max <maxvalue>] [-l <string>] [-nonl] [-o]
+printTempInfo:1: command not found: acpi
+printBattery:1: command not found: acpi
+printBattery:2: command not found: acpi
+usage: dbar [-w <pixel>] [-h <pixel>] [-fg <color>] [-bg <color>] [-min <minvalue>] [-max <maxvalue>] [-l <string>] [-nonl] [-o]
+printTempInfo:1: command not found: acpi
+printBattery:1: command not found: acpi
+printBattery:2: command not found: acpi
+usage: dbar [-w <pixel>] [-h <pixel>] [-fg <color>] [-bg <color>] [-min <minvalue>] [-max <maxvalue>] [-l <string>] [-nonl] [-o]
+printTempInfo:1: command not found: acpi
+printBattery:1: command not found: acpi
+printBattery:2: command not found: acpi
+usage: dbar [-w <pixel>] [-h <pixel>] [-fg <color>] [-bg <color>] [-min <minvalue>] [-max <maxvalue>] [-l <string>] [-nonl] [-o]
+xinit: connection to X server lost
+
+waiting for X server to shut down XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":0"
+      after 922 requests (922 known processed) with 0 events remaining.
+trayer: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":0"
+      after 5199 requests (5199 known processed) with 0 events remaining.
+urxvt: X connection to ':0' broken, unable to recover, exiting.
+
+xinit: unexpected signal 2

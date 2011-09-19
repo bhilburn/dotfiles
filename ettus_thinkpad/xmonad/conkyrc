@@ -1,0 +1,22 @@
+# ~/.conkyrc
+# Thayer Williams - http://cinderwick.ca
+# vim:nu:ai:si:et:ts=4:sw=4:ft=conkyrc:
+
+background no
+out_to_x no
+out_to_console yes
+update_interval 3
+total_run_times 0
+use_spacer none
+
+# temp, loadavg, cpu usage, cpu freq, battery, network, date
+
+TEXT
+^i(/home/bhilburn/.icons/thayer/temp.xbm) ^fg(\#657b83)${hwmon temp 1}°^fg()  \
+^i(/home/bhilburn/.icons/thayer/load.xbm) ^fg(\#cb4b16)${loadavg 1 2 3}^fg()  \
+^i(/home/bhilburn/.icons/thayer/cpu.xbm) ^fg(\#859900)${cpu cpu1}%^fg() :: ^fg(\#aaaaaa)${freq_g 1}GHz^fg()  \
+^i(/home/bhilburn/.icons/thayer/mem.xbm) ^fg(\#2aa198)${mem}^fg()  \
+^fg(\#91b8ff)${if_existing /sys/class/power_supply/BAT0/present}${battery_short BAT0} (${battery_time BAT0})${else}AC${endif}^fg()  \
+${if_empty ${exec ifconfig wlan0 | grep 'inet addr:'}}^i(/home/bhilburn/.icons/thayer/net-wired.xbm)^fg(\#bbbbbb)eth0^fg()  ^fg(\#a4bc51)${downspeedf eth0}k/s ^i(/home/bhilburn/.icons/thayer/down.xbm)^fg()  ^fg(\#d94c3d)${upspeedf eth0}k/s^fg() ^i(/home/bhilburn/.icons/thayer/up.xbm)${else}\
+ ^i(/home/bhilburn/.icons/thayer/net-wifi.xbm)^fg(\#bbbbbb)${wireless_link_qual_perc wlan0}%  ${wireless_essid wlan0}^fg()  ^fg(\#a4bc51)${downspeedf wlan0}k/s^fg() ^i(/home/bhilburn/.icons/thayer/down.xbm) ^fg(\#d94c3d)${upspeedf wlan0}k/s^fg() ^i(/home/bhilburn/.icons/thayer/up.xbm)${endif}   \
+^fg(\#ffffff)${time %b %d %H:%M}^fg()    

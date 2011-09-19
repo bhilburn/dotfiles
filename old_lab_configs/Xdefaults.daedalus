@@ -1,0 +1,50 @@
+!Colours
+
+! Black
+!URxvt*color0: #2E3436
+!URxvt*color8: #555753
+URxvt*color0: #242424
+URxvt*color8: #cdb5cd
+
+! Red
+!URxvt*color1: #803232
+!URxvt*color9: #982b2b
+URxvt*color1: #bf7979
+URxvt*color9: #f4a45f
+
+! Green
+!URxvt*color2: #4E9A06
+!URxvt*color10: #67BF13
+URxvt*color2: #97b26b
+URxvt*color10: #c5f779
+
+! Yellow
+!URxvt*color3: #C4A000
+!URxvt*color11: #D6C000
+URxvt*color3: #cdcda1
+URxvt*color11: #ffffaf
+
+! Blue
+!URxvt*color4: #204A87
+!URxvt*color12: #3465A4
+URxvt*color4: #86a2be
+URxvt*color12: #98afd9
+
+! Magenta
+!URxvt*color5: #5C3566
+!URxvt*color5: #5C3566
+URxvt*color13: #d9b798
+URxvt*color13: #d7d998
+
+! Cyan
+!URxvt*color6: #508695
+!URxvt*color14: #a1cdcd
+URxvt*color6: #a1b5cd
+URxvt*color14: #a1b5cd
+
+! White
+!URxvt*color7: #888A85
+!URxvt*color15: #BABDB6
+URxvt*color7: #ffffff
+URxvt*color15: #dedede
+

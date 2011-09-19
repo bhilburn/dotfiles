@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Set the default session to openbox
+session_default=gnome
+
+# Allow specifying a session with startx
+session=$2
+test -z "$session" && session=$session_default
+
+# Start the URxvt daemon
+urxvtd -q -o -f &
+
+# Restore the previous background
+#eval `cat ~/.fehbg` &
+#nitrogen --restore &
+
+# Make sure we are in Dvorak
+setxkbmap dvorak
+
+case $session in
+    "gnome-xmonad")
+        exec ck-launch-session gnome-session --session=xmonad;;
+
+    "gnome")
+        exec ck-launch-session gnome-session;;
+
+    "xmonad")
+#        cairo-compmgr &
+        xrdb -merge ~/.Xresources
+        xsetroot -cursor_name left_ptr
+        xset +fp /usr/share/fonts/local
+        xset fp rehash
+        trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 15 --height 14 --transparent true --tint 0xffffff &
+#        xmodmap $HOME/.Xmodmap &
+#        xscreensaver -no-splash &
+        gnome-settings-daemon &
+        gnome-power-manager &
+        gnome-screensaver &
+        nm-applet --sm-disable &
+        enable_thinkpad_trackpoint.sh
+        exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad;;
+    *)
+
+esac
