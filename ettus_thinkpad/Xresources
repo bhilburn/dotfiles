@@ -76,42 +76,42 @@
   #define S_base3       S_rebase3
 #endif
 
-*background:            S_base03
-*foreground:            S_base00
-*fading:                40
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
+URxvt*background:            #262626
+*foreground:                 #eee8d5
+!!URxvt*fading:                40
+!!URxvt*fadeColor:             S_base03
+URxvt*cursorColor:           S_base1
+URxvt*pointerColorBackground:S_base01
+URxvt*pointerColorForeground:S_base1
 
 !! black dark/light
-*color0:                S_base02
-*color8:                S_base03
+URxvt*color0:                S_base02
+URxvt*color8:                S_base03
 
 !! red dark/light
-*color1:                S_red
-*color9:                S_orange
+URxvt*color1:                S_red
+URxvt*color9:                S_orange
 
 !! green dark/light
-*color2:                S_green
-*color10:               S_green
+URxvt*color2:                S_green
+URxvt*color10:               S_green
 
 !! yellow dark/light
-*color3:                S_yellow
-*color11:               S_yellow
+URxvt*color3:                S_yellow
+URxvt*color11:               S_yellow
 
 !! blue dark/light
-*color4:                S_blue
-*color12:               S_blue
+URxvt*color4:                S_blue
+URxvt*color12:               S_blue
 
 !! magenta dark/light
-*color5:                S_magenta
-*color13:               S_violet
+URxvt*color5:                S_magenta
+URxvt*color13:               S_violet
 
 !! cyan dark/light
-*color6:                S_cyan
-*color14:               S_cyan
+URxvt*color6:                S_cyan
+URxvt*color14:               S_cyan
 
 !! white dark/light
-*color7:                S_base2
-*color15:               S_base3
+URxvt*color7:                S_base2
+URxvt*color15:               S_base3

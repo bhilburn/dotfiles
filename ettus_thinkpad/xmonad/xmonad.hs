@@ -76,9 +76,9 @@ myDzenPP = dzenPP
     , ppHidden  = dzenColor "#dddddd" "" . wrap " " " "
     , ppHiddenNoWindows = dzenColor "#777777" "" . wrap " " " "
     , ppUrgent  = dzenColor "#ff0000" "" . wrap " " " "
-    , ppSep     = "     "
+    , ppSep     = "   "
     , ppLayout  = dzenColor "#aaaaaa" "" . wrap "·" "·"
-    , ppTitle   = dzenColor "#ffffff" "" . shorten 100
+    , ppTitle   = dzenColor "#ffffff" "" . shorten 150
     }
 
 

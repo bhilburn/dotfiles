@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Set the default session to openbox
-session_default=gnome
+session_default=cinnamon
 
 # Allow specifying a session with startx
 session=$2
 test -z "$session" && session=$session_default
 
 # Start the URxvt daemon
-urxvtd -q -o -f &
+#urxvtd -q -o -f &
 
 # Restore the previous background
 #eval `cat ~/.fehbg` &
@@ -17,27 +17,77 @@ urxvtd -q -o -f &
 # Make sure we are in Dvorak
 setxkbmap dvorak
 
+# Stuff for USRPs
+sudo sysctl -w net.core.rmem_max=50000000
+sudo sysctl -w net.core.rmem_max=50000000
+sudo sysctl -w net.core.wmem_max=1048576
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
 case $session in
     "gnome-xmonad")
         exec ck-launch-session gnome-session --session=xmonad;;
 
     "gnome")
+        xrdb -merge ~/.Xresources
+        xbindkeys
         exec ck-launch-session gnome-session;;
+
+    "cinnamon")
+        xrdb -merge ~/.Xresources
+        xbindkeys
+        exec ck-launch-session gnome-session-cinnamon;;
+
+    "kde")
+        xrdb -merge ~/.Xresources
+        xbindkeys
+        exec ck-launch-session startkde;;
+
+    "xfce")
+        xrdb -merge ~/.Xresources
+        xbindkeys
+        exec ck-launch-session dbus-launch --exit-with-session startxfce4;;
 
     "xmonad")
 #        cairo-compmgr &
+        # Defining global colors (mostly for terminal).
         xrdb -merge ~/.Xresources
+
+        # The right pointer is weird.
         xsetroot -cursor_name left_ptr
+
+        # Otherwise, dzen2/conky is too stupid to find my fonts.
         xset +fp /usr/share/fonts/local
         xset fp rehash
-        trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 15 --height 14 --transparent true --tint 0xffffff &
-#        xmodmap $HOME/.Xmodmap &
+
+        # System tray launch.
+        trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 5 --height 14 --transparent true --tint 0xeee8d5 &
+        xmodmap $HOME/.Xmodmap
 #        xscreensaver -no-splash &
+
+        # Let's get our GNOME daemons going for fancy conviences...
         gnome-settings-daemon &
         gnome-power-manager &
         gnome-screensaver &
+
+        # I like having an applet to manage my wireless networks.
         nm-applet --sm-disable &
+
+        # Without this, cool stuff like middle-mouse scroll won't work.
         enable_thinkpad_trackpoint.sh
+
+        # fuck that hw audio bell.
+        xset b off
+
+        # Enable suspend / hibernate buttons
+        xbindkeys
+
+        # Let's rock 'n roll.
         exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad;;
     *)
 
