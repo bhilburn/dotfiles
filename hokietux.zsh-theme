@@ -5,7 +5,6 @@ M=$fg[magenta]
 RB=$fg_bold[red]
 YB=$fg_bold[yellow]
 BB=$fg_bold[blue]
-RESET=$reset_color
 
 if [ "$(whoami)" = "root" ]; then
     PROMPTCOLOR="%{$RB%}" PREFIX="-!-";
@@ -13,7 +12,7 @@ else
     PROMPTCOLOR="" PREFIX="---";
 fi
 
-local return_code="%(?..%{$R%}%? ↵%{$RESET%})"
+local return_code="%(?..%{$RB%}%? ↵%{$reset_color%})"
 
 # git theming
 #ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}±(%{$fg_no_bold[red]%}"
