@@ -34,3 +34,6 @@
 [submodule "vim/bundle/orgmode"]
 	path = vim/bundle/orgmode
 	url = git://github.com/jceb/vim-orgmode.git
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
