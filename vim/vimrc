@@ -82,7 +82,6 @@ augroup cline
 augroup END
 
 " Only shown when not in insert mode so I don't go insane.
-
 augroup trailing
     au!
     au InsertEnter * :set listchars-=trail:⌴
@@ -839,7 +838,15 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_disabled_filetypes = ['html', 'rst']
 let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
+
 let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
+
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_auto_refresh_includes = 1
+let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+let g:syntastic_cpp_remove_include_errors = 1
+
+let g:syntastic_python_checker = 'pylint'
 
 " Splice
 " let g:splice_leader = "-"
