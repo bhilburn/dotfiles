@@ -46,3 +46,6 @@
 [submodule "vim/bundle/salt"]
 	path = vim/bundle/salt
 	url = git://github.com/saltstack/salt-vim.git
+[submodule "vim/bundle/smartinput"]
+	path = vim/bundle/smartinput
+	url = git://github.com/kana/vim-smartinput.git
