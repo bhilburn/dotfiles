@@ -422,11 +422,9 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-
 noremap <leader>v <C-w>v
 
 " Highlight word
-
 nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
 nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
 nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
@@ -450,13 +448,6 @@ nnoremap <left>  :cprev<cr>zvzz
 nnoremap <right> :cnext<cr>zvzz
 nnoremap <up>    :lprev<cr>zvzz
 nnoremap <down>  :lnext<cr>zvzz
-
-" Easy buffer navigation instead of the whole Ctrl-w crap.
-noremap <C-j>  <C-w>j
-noremap <C-k>  <C-w>k
-noremap <C-l>  <C-w>l
-noremap <C-h>  <C-w>h
-noremap <leader>g <C-w>v<C-w>l
 
 " Map ,s to show whitespace so I can easily fix mixed tabs and spaces and
 " other such nonsense.
@@ -504,7 +495,6 @@ au BufRead,BufNewFile PKGBUILD set ts=2 sts=2 et sw=2
 au FileType vim setlocal foldmethod=marker
 
 " CSS and LessCSS
-
 augroup ft_css
     au!
 
@@ -623,19 +613,12 @@ augroup ft_vim
     au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
 augroup END
 
-" Key mappings - ViM Explorer
-nnoremap <silent> <F9> :Explore<CR>
-
-" Key mappings - silly quotes
-nnoremap ` '
-nnoremap ' `
-
 " Key mappings - clean whitespace
 map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Ack
 nnoremap <leader>a :Ack!<space>
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ack --nogroup --nocolor --column'
 
 " Autoclose
 nmap <Leader>x <Plug>ToggleAutoCloseMappings
@@ -718,7 +701,6 @@ augroup END
 nnoremap <leader>H :Gbrowse<cr>
 vnoremap <leader>H :Gbrowse<cr>
 
-
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_debug = 1
@@ -772,11 +754,8 @@ let NERDTreeMapJumpFirstChild = 'gK'
 
 " OrgMode
 let g:org_plugins = ['ShowHide', '|', 'Navigator', 'EditStructure', '|', 'Todo', 'Date', 'Misc']
-
 let g:org_todo_keywords = ['TODO', '|', 'DONE']
-
 let g:org_debug = 1
-
 
 " Powerline
 let g:Powerline_symbols = 'compatible'
@@ -819,7 +798,6 @@ let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = 0
 let g:pymode_rope_always_show_complete_menu = 0
 
-
 " Scratch
 command! ScratchToggle call ScratchToggle()
 
@@ -832,9 +810,7 @@ function! ScratchToggle()
         let w:is_scratch_window = 1
     endif
 endfunction
-
 nnoremap <silent> <leader><tab> :ScratchToggle<cr>
-
 
 " SLIMV
 let g:slimv_leader = '\'
@@ -864,7 +840,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_disabled_filetypes = ['html', 'rst']
 let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
 let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
-
 
 " Splice
 " let g:splice_leader = "-"
@@ -906,8 +881,6 @@ function! YRRunAfterMaps()
     " Don't clobber the yank register when pasting over text in visual mode.
     vnoremap p :<c-u>YRPaste 'p', 'v'<cr>gv:YRYankRange 'v'<cr>
 endfunction
-
-
 
 
 " Text objects ------------------------------------------------------------
