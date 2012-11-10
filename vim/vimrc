@@ -409,13 +409,6 @@ nnoremap Vat vatV
 nnoremap Vab vabV
 nnoremap VaB vaBV
 
-" Directional Keys
-" It's 2012.
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
-
 " Easy buffer navigation
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -454,10 +447,10 @@ set listchars=tab:>-,trail:·
 nmap <silent> <leader>s :set nolist!<CR>
 
 " Folding Settings
+set nofoldenable
 set foldlevelstart=100
 set foldlevel=100 
-set foldcolumn=4
-set foldenable
+set foldcolumn=2
 set foldmethod=indent
 set foldopen-=search
 set foldopen-=undo
@@ -1190,7 +1183,7 @@ endfunction
 
 
 " Indent Guides
-let g:indentguides_state = 0
+let g:indentguides_state = 1
 function! IndentGuides()
     if g:indentguides_state
         let g:indentguides_state = 0
@@ -1283,9 +1276,3 @@ else
     set mouse=a
     set mousemodel=popup
 endif
-
-" Status line settings
-" set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y\
-" set shortmess+=aI
-" hi StatusLine term=inverse cterm=NONE ctermfg=white ctermbg=black
-" hi StatusLineNC term=none cterm=NONE ctermfg=darkgray ctermbg=black
