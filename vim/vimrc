@@ -719,9 +719,6 @@ nnoremap <leader>L :LinediffReset<cr>
 " Lisp (built-in)
 let g:lisp_rainbow = 1
 
-" Makegreen
-nnoremap \| :call MakeGreen('')<cr>
-
 " NERD Tree
 noremap  <F2> :NERDTreeToggle<cr>
 inoremap <F2> <esc>:NERDTreeToggle<cr>
@@ -738,10 +735,10 @@ let NERDTreeIgnore = ['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$', 'whoosh_index
                     \ 'xapian_index', '.*.pid', 'monitor.py', '.*-fixtures-.*.json',
                     \ '.*\.o$', 'db.db', 'tags.bak']
 
-let NERDTreeMinimalUI = 1
+let NERDTreeMinimalUI = 0
 let NERDTreeDirArrows = 1
 let NERDChristmasTree = 1
-let NERDTreeChDirMode = 2
+let NERDTreeChDirMode = 1
 let NERDTreeMapJumpFirstChild = 'gK'
 
 " OrgMode
@@ -792,7 +789,6 @@ let g:pymode_rope_always_show_complete_menu = 0
 
 " Scratch
 command! ScratchToggle call ScratchToggle()
-
 function! ScratchToggle()
     if exists("w:is_scratch_window")
         unlet w:is_scratch_window
