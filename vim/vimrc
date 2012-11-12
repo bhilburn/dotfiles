@@ -155,7 +155,7 @@ set background=dark
 set t_Co=256
 let g:badwolf_tabline = 2
 let g:badwolf_html_link_underline = 0
-colorscheme badwolf
+colorscheme molokai
 
 " Reload the colorscheme whenever we write the file.
 augroup color_badwolf_dev
