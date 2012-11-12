@@ -29,7 +29,7 @@ set norelativenumber
 set laststatus=2
 set history=1000
 set list
-set listchars=tab:▸\ ,trail:·,eol:¬,extends:❯,precedes:❮
+set listchars=tab:>-,trail:·
 set shell=/bin/bash\ --login
 set lazyredraw
 set matchtime=3
@@ -84,7 +84,8 @@ augroup END
 " Only shown when not in insert mode so I don't go insane.
 augroup trailing
     au!
-    au InsertEnter * :set listchars-=trail:⌴
+    au InsertEnter * :set listchars+=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:·
+    au InsertLeave * :set listchars-=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:·
 augroup END
 
 " Wildmode options, for command-line tab completion
