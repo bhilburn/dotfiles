@@ -29,7 +29,7 @@ set norelativenumber
 set laststatus=2
 set history=1000
 set list
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:▸\ ,trail:·,eol:¬,extends:❯,precedes:❮
 set shell=/bin/bash\ --login
 set lazyredraw
 set matchtime=3
@@ -437,11 +437,6 @@ nnoremap <left>  :cprev<cr>zvzz
 nnoremap <right> :cnext<cr>zvzz
 nnoremap <up>    :lprev<cr>zvzz
 nnoremap <down>  :lnext<cr>zvzz
-
-" Map ,s to show whitespace so I can easily fix mixed tabs and spaces and
-" other such nonsense.
-set listchars=tab:>-,trail:·
-nmap <silent> <leader>s :set nolist!<CR>
 
 " Folding Settings
 set nofoldenable
