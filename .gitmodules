@@ -67,6 +67,6 @@
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
 	url = git://github.com/tomasr/molokai.git
-[submodule "vim/bundle/easytags"]
-	path = vim/bundle/easytags
-	url = git://github.com/xolox/vim-easytags.git
+[submodule "vim/bundle/vim-unimpaired"]
+	path = vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired

@@ -1239,10 +1239,6 @@ let OmniCpp_MayCompleteArrow = 1
 let OmniCpp_MayCompleteScope = 0
 let OmniCpp_SelectFirstItem = 0
 
-" Easytags settings
-let g:easytags_dynamic_files = 2
-highlight link cMember Special
-
 " Environments (GUI / Console)
 if has('gui_running')
     " GUI Vim
