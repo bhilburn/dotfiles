@@ -76,3 +76,6 @@
 [submodule "vim/snippets"]
 	path = vim/snippets
 	url = git://github.com/scrooloose/snipmate-snippets.git
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
