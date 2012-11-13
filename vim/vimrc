@@ -188,6 +188,9 @@ iabbrev vrcf `~/.vimrc` file
 " Stop it, hash key.
 inoremap # X<BS>#
 
+" <ESC> is really far away
+imap <c-h> <ESC>
+
 " Kill window
 nnoremap K :q<cr>
 
@@ -651,7 +654,7 @@ let ctrlp_filter_greps = "".
     \ "jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po" .
     \ ")$' | " .
     \ "egrep -v '^(\\./)?(" .
-    \ "deploy/|classes/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/" .
+    \ "deploy/|classes/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/|build/" .
     \ ")'"
 
 let my_ctrlp_user_command = "" .
