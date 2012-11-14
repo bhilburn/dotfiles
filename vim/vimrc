@@ -189,7 +189,7 @@ iabbrev vrcf `~/.vimrc` file
 inoremap # X<BS>#
 
 " <ESC> is really far away
-imap <c-h> <ESC>
+imap <c-d> <ESC>
 
 " Kill window
 nnoremap K :q<cr>
