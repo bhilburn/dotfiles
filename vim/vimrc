@@ -713,7 +713,13 @@ vnoremap <leader>l :Linediff<cr>
 nnoremap <leader>L :LinediffReset<cr>
 
 " Lisp (built-in)
-let g:lisp_rainbow = 1
+"let g:lisp_rainbow = 1
+
+" Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBrace
 
 " NERD Tree
 noremap  <F2> :NERDTreeToggle<cr>
