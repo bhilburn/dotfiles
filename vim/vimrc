@@ -190,6 +190,8 @@ inoremap # X<BS>#
 
 " <ESC> is really far away
 imap <c-d> <ESC>
+nnoremap <c-d> <ESC>
+vnoremap <c-d> <ESC>
 
 " Kill window
 nnoremap K :q<cr>
