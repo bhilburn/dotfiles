@@ -551,14 +551,6 @@ augroup ft_markdown
     au Filetype markdown nnoremap <buffer> <localleader>3 mzI###<space>`zllll <ESC>
 augroup END
 
-" OrgMode
-augroup ft_org
-    au!
-
-    au Filetype org nmap <buffer> Q vahjgq
-    au Filetype org setlocal nolist
-augroup END
-
 " Python
 augroup ft_python
     au!
@@ -747,11 +739,6 @@ let NERDTreeDirArrows = 1
 let NERDChristmasTree = 1
 let NERDTreeChDirMode = 1
 let NERDTreeMapJumpFirstChild = 'gK'
-
-" OrgMode
-let g:org_plugins = ['ShowHide', '|', 'Navigator', 'EditStructure', '|', 'Todo', 'Date', 'Misc']
-let g:org_todo_keywords = ['TODO', '|', 'DONE']
-let g:org_debug = 1
 
 " Powerline
 let g:Powerline_symbols = 'compatible'
