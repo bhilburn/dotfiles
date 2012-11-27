@@ -365,7 +365,7 @@ set incsearch
 set showmatch
 set hlsearch
 set gdefault
-set scrolloff=3
+set scrolloff=10
 set sidescroll=1
 set sidescrolloff=10
 set virtualedit+=block
