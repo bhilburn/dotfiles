@@ -425,7 +425,7 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-noremap <leader>v <C-w>v
+noremap <leader>v :vsplit<cr><C-w>l
 
 " Highlight word
 nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
@@ -750,7 +750,7 @@ let g:pymode_doc = 1
 let g:pymode_doc_key = '<localleader>ds'
 let g:pydoc = 'pydoc'
 let g:pymode_syntax = 1
-let g:pymode_syntax_all = 0
+let g:pymode_syntax_all = 1
 let g:pymode_syntax_builtin_objs = 1
 let g:pymode_syntax_print_as_function = 0
 let g:pymode_syntax_space_errors = 0
@@ -760,7 +760,7 @@ let g:pymode_breakpoint = 0
 let g:pymode_utils_whitespaces = 0
 let g:pymode_virtualenv = 0
 let g:pymode_folding = 0
-let g:pymode_options_indent = 0
+let g:pymode_options_indent = 1
 let g:pymode_options_fold = 0
 let g:pymode_options_other = 0
 let g:pymode_options = 0
