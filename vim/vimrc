@@ -194,7 +194,7 @@ nnoremap <c-d> <ESC>
 vnoremap <c-d> <ESC>
 
 " Kill window
-nnoremap K :q<cr>
+"nnoremap K :q<cr>
 
 " Toggle line numbers
 nnoremap <leader>n :setlocal number!<cr>
@@ -754,15 +754,14 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax_builtin_objs = 1
 let g:pymode_syntax_print_as_function = 0
 let g:pymode_syntax_space_errors = 0
-let g:pymode_run = 0
+let g:pymode_run_key = "<leader>R"
 let g:pymode_lint = 0
 let g:pymode_breakpoint = 0
+let g:pymode_breakpoint_key = "<leader>B"
 let g:pymode_utils_whitespaces = 0
 let g:pymode_virtualenv = 0
 let g:pymode_folding = 0
-let g:pymode_options_indent = 1
-let g:pymode_options_fold = 0
-let g:pymode_options_other = 0
+let g:pymode_indent = 1
 let g:pymode_options = 0
 let g:pymode_rope = 1
 let g:pymode_rope_global_prefix = "<localleader>R"
@@ -780,6 +779,7 @@ let g:pymode_rope_vim_completion = 1
 let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = 0
 let g:pymode_rope_always_show_complete_menu = 0
+let g:pymode_lint_ignore="W0301,C0111"
 
 " Scratch
 command! ScratchToggle call ScratchToggle()
