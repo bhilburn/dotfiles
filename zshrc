@@ -51,8 +51,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin:/home/bhilburn/applications/CodeSourcery/bin
 
-export XILINX=/opt/Xilinx/12.1/ISE_DS
+export XILINX=/opt/Xilinx/14.4/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/gnu/microblaze/lin64/bin
+export _JAVA_AWT_WM_NONREPARENTING = 1
 
 export CCACHE_PATH="/usr/bin"
 
@@ -63,7 +64,8 @@ export PYTHONPATH=/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site
 export DJANGO_SETTINGS_MODULE=characterize.settings
 
 alias ls="ls -FG --color=always"
-alias g="grep -rniI "
+alias gr="grep -rniI "
 alias h="history | grep "
+alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
 eval `keychain --eval --agents ssh id_rsa`
