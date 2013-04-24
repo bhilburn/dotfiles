@@ -20,11 +20,14 @@ ZSH_THEME="hokietux"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn)
+plugins=(zsh-syntax-highlighting git git-extras svn history-substring-search command-not-found)
+
+bindkey '^[OA' history-beginning-search-backward
+bindkey '^[OB' history-beginning-search-forward
 
 #!/bin/sh
 cp_p()
@@ -53,7 +56,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bi
 
 export XILINX=/opt/Xilinx/14.4/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/gnu/microblaze/lin64/bin
-export _JAVA_AWT_WM_NONREPARENTING = 1
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 export CCACHE_PATH="/usr/bin"
 
@@ -68,4 +71,4 @@ alias gr="grep -rniI "
 alias h="history | grep "
 alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
-eval `keychain --eval --agents ssh id_rsa`
+#eval `keychain --eval --agents ssh id_rsa`
