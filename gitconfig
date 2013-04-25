@@ -1,0 +1,17 @@
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+[user]
+	email = ben.hilburn@ettus.com
+	name = Ben Hilburn
+[color]
+	ui = always
+[color "diff"]
+	meta = blue black bold
+[core]
+	pager = less -F -X
