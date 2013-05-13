@@ -79,3 +79,6 @@
 [submodule "vim/bundle/kernel-coding-style"]
 	path = vim/bundle/kernel-coding-style
 	url = git@github.com:bhilburn/kernel-coding-style.git
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
