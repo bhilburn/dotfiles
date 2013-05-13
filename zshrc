@@ -72,3 +72,6 @@ alias h="history | grep "
 alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
 #eval `keychain --eval --agents ssh id_rsa`
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
