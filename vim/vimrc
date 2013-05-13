@@ -491,6 +491,9 @@ au FileType v,verilog set shiftwidth=3
 au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
 au FileType vim setlocal foldmethod=marker
 
+" Press 'k' to turn on the LinuxFormatting options in the current session
+nnoremap <silent> <leader>k :SetLinuxFormatting<cr><cr>
+
 " CSS and LessCSS
 augroup ft_css
     au!
@@ -545,6 +548,8 @@ augroup ft_markdown
     au!
 
     au BufNewFile,BufRead *.m*down setlocal filetype=markdown
+
+    au Filetype markdown set spell
 
     " Use <localleader>1/2/3 to add headings.
     au Filetype markdown nnoremap <buffer> <localleader>1 yypVr=:redraw<cr>
