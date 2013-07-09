@@ -178,7 +178,7 @@ function! MakeSpacelessBufferIabbrev(from, to)
     execute "iabbrev <silent> <buffer> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
 endfunction
 
-"call MakeSpacelessIabbrev('sl/',  'http://stevelosh.com/')
+call MakeSpacelessIabbrev('bh/',  'http://hokietux.net/')
 iabbrev ldis ಠ_ಠ
 iabbrev lsad ಥ_ಥ
 iabbrev lhap ಥ‿ಥ
@@ -280,7 +280,7 @@ vnoremap Q gq
 " I never use l as a macro register anyway.
 nnoremap ql ^vg_gq
 
-" Easier linewise reselection
+" Easier linewise reselection of whatever was just pasted
 nnoremap <leader>V V`]
 
 " Indent/dedent/autoindent what you just pasted.
