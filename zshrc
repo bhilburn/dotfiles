@@ -52,7 +52,7 @@ cp_p()
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin:/home/bhilburn/applications/CodeSourcery/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin:/home/bhilburn/applications/CodeSourcery/bin:/usr/games
 
 export XILINX=/opt/Xilinx/14.4/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/gnu/microblaze/lin64/bin
