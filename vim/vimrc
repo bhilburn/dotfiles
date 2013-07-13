@@ -376,8 +376,11 @@ set virtualedit+=block
 
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
+" For some reason, lately, I need to run :MatchDebug to make this actually work
+" properly.
 runtime macros/matchit.vim
 map <tab> %
+MatchDebug
 
 " Made D behave
 nnoremap D d$
@@ -758,14 +761,8 @@ augroup END
 
 augroup ft_markdown
     au!
-
-    au BufNewFile,BufRead *.m*down setlocal filetype=markdown foldlevel=1
     au Filetype markdown set spell
 
-    " Use <localleader>1/2/3 to add headings.
-    au Filetype markdown nnoremap <buffer> <localleader>1 yypVr=:redraw<cr>
-    au Filetype markdown nnoremap <buffer> <localleader>2 yypVr-:redraw<cr>
-    au Filetype markdown nnoremap <buffer> <localleader>3 mzI###<space>`zllll <ESC>
 augroup END
 
 " }}}
@@ -789,35 +786,6 @@ augroup ft_nginx
     au BufRead,BufNewFile vhost.nginx                            set ft=nginx
 
     au FileType nginx setlocal foldmethod=marker foldmarker={,}
-augroup END
-
-" }}}
-" OrgMode {{{
-
-augroup ft_org
-    au!
-
-    au Filetype org nmap <buffer> Q vahjgq
-    au Filetype org setlocal nolist
-augroup END
-
-" }}}
-" Pentadactyl {{{
-
-augroup ft_pentadactyl
-    au!
-    au BufNewFile,BufRead .pentadactylrc set filetype=pentadactyl
-    au BufNewFile,BufRead ~/Library/Caches/TemporaryItems/pentadactyl-*.tmp set nolist wrap linebreak columns=100 colorcolumn=0
-augroup END
-
-" }}}
-" Puppet {{{
-
-augroup ft_puppet
-    au!
-
-    au Filetype puppet setlocal foldmethod=marker
-    au Filetype puppet setlocal foldmarker={,}
 augroup END
 
 " }}}
@@ -1901,3 +1869,9 @@ else
     set mouse=a
 endif
 " }}}
+
+
+" Finally, we have now set a whole bunch of different filetypes for specific
+" filenames. If ViM hadn't auto-recognized the filetype to begin with, syntax
+" might not have been loaded.
+syntax on
