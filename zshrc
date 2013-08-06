@@ -24,7 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-syntax-highlighting git git-extras svn history-substring-search command-not-found)
+plugins=(zsh-syntax-highlighting git git-extras svn history-substring-search command-not-found colored-man colorize copyfile copydir cp dircycle screen vi-mode cabal ghc hugs)
 
 bindkey '^[OA' history-beginning-search-backward
 bindkey '^[OB' history-beginning-search-forward
@@ -54,6 +54,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin:/home/bhilburn/applications/CodeSourcery/bin:/usr/games
 
+# For Haskell...
+export PATH=${PATH}:${HOME}/.cabal/bin
+
 export XILINX=/opt/Xilinx/14.4/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/gnu/microblaze/lin64/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -73,5 +76,5 @@ alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
 #eval `keychain --eval --agents ssh id_rsa`
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
