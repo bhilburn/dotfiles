@@ -24,7 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-syntax-highlighting git git-extras svn history-substring-search command-not-found colored-man colorize copyfile copydir cp dircycle screen vi-mode cabal ghc hugs)
+plugins=(zsh-syntax-highlighting git git-extras svn history-substring-search command-not-found colored-man colorize copyfile copydir cp dircycle screen cabal ghc hugs)
 
 bindkey '^[OA' history-beginning-search-backward
 bindkey '^[OB' history-beginning-search-forward
