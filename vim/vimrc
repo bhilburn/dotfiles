@@ -901,7 +901,7 @@ augroup END
 " Ack {{{
 
 nnoremap <leader>a :Ack!<space>
-let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
+let g:ackprg = 'ack --smart-case --nogroup --nocolor --column'
 
 " }}}
 " Autoclose {{{
@@ -1006,13 +1006,6 @@ let g:gundo_debug = 1
 let g:gundo_preview_bottom = 1
 let g:gundo_tree_statusline = "Gundo"
 let g:gundo_preview_statusline = "Gundo Preview"
-
-" }}}
-" Haskellmode {{{
-
-let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s %s"
-let g:ghc = "/usr/local/bin/ghc"
 
 " }}}
 " HTML5 {{{

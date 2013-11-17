@@ -57,6 +57,9 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bi
 # For Haskell...
 export PATH=${PATH}:${HOME}/.cabal/bin
 
+# For Coverity
+export PATH=${PATH}:${HOME}/applications/cov-analysis-linux64-6.6.1/bin
+
 export XILINX=/opt/Xilinx/14.4/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/gnu/microblaze/lin64/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -70,7 +73,7 @@ export PYTHONPATH=/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site
 export DJANGO_SETTINGS_MODULE=characterize.settings
 
 alias ls="ls -FG --color=always"
-alias gr="grep -rniI "
+alias gr="grep --exclude-dir=build --exclude-dir=swig --exclude-dir=.git --exclude=tags -rniI "
 alias h="history | grep "
 alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
