@@ -11,7 +11,7 @@
 	email = ben.hilburn@ettus.com
 	name = Ben Hilburn
 [color]
-	ui = always
+	ui = auto
 [color "diff"]
 	meta = blue black bold
 [core]
