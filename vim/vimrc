@@ -29,9 +29,9 @@ set norelativenumber
 set laststatus=2
 set history=1000
 set list
-set listchars=tab:>-,trail:·
-set shell=/bin/bash\ --login
+set listchars=tab:>-,trail:·,extends:❯,precedes:❮
 set lazyredraw
+set shell=/bin/bash\ --login
 set matchtime=3
 set showbreak=↪
 set splitbelow
@@ -901,7 +901,7 @@ augroup END
 " Ack {{{
 
 nnoremap <leader>a :Ack!<space>
-let g:ackprg = 'ack --smart-case --nogroup --nocolor --column'
+let g:ackprg = 'ack --ignore-file=is:tags --smart-case --nogroup --nocolor --column'
 
 " }}}
 " Autoclose {{{
@@ -1007,6 +1007,11 @@ let g:gundo_preview_bottom = 1
 let g:gundo_tree_statusline = "Gundo"
 let g:gundo_preview_statusline = "Gundo Preview"
 
+" }}}
+" Haskell {{{
+let g:haddock_browser = "/usr/bin/chromium-browser"
+let g:ghc = "/usr/bin/ghc"
+let g:haddock_docdir = "/usr/share/doc/ghc-doc/html"
 " }}}
 " HTML5 {{{
 
