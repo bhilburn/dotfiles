@@ -16,3 +16,4 @@
 	meta = blue black bold
 [core]
 	pager = less -F -X
+	editor = vim
