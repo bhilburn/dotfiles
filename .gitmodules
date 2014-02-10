@@ -91,3 +91,9 @@
 [submodule "vim/bundle/vim2hs"]
 	path = vim/bundle/vim2hs
 	url = https://github.com/dag/vim2hs.git
+[submodule "vim/bundle/vimproc.git"]
+	path = vim/bundle/vimproc.git
+	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "vim/bundle/haskellmode-vim.git"]
+	path = vim/bundle/haskellmode-vim.git
+	url = https://github.com/lukerandall/haskellmode-vim.git
