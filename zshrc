@@ -24,10 +24,18 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-syntax-highlighting git git-extras svn history-substring-search command-not-found colored-man colorize copyfile copydir cp dircycle screen cabal ghc hugs)
+plugins=(vi-mode zsh-syntax-highlighting git git-extras svn history-substring-search command-not-found colored-man colorize copyfile copydir cp dircycle screen cabal ghc hugs)
+
+### KEY BINDINGS ############################################################
 
 bindkey '^[OA' history-beginning-search-backward
 bindkey '^[OB' history-beginning-search-forward
+
+## Vim key bindings
+bindkey '^?' backward-delete-char
+bindkey '^R' history-incremental-search-backward
+bindkey -M viins "\e." insert-last-word
+bindkey -M vicmd "\e." insert-last-word
 
 #!/bin/sh
 cp_p()
@@ -60,11 +68,10 @@ export PATH=${PATH}:${HOME}/.cabal/bin
 # For Coverity
 export PATH=${PATH}:${HOME}/applications/cov-analysis-linux64-6.6.1/bin
 
+# For Xilinx Build Tools
 export XILINX=/opt/Xilinx/14.4/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/gnu/microblaze/lin64/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-export CCACHE_PATH="/usr/bin"
 
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
@@ -81,3 +88,9 @@ alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# For building firmware
+export PATH=$PATH:/opt/zpugcc/bin
+
+# Use ccache for all things
+export PATH=/usr/lib64/ccache:$PATH
