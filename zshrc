@@ -60,7 +60,7 @@ cp_p()
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin:/home/bhilburn/applications/CodeSourcery/bin:/usr/games
+export PATH=/home/bhilburn/usr/bin:/home/bhilburn/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin:/home/bhilburn/applications/CodeSourcery/bin:/usr/games
 
 # For Haskell...
 export PATH=${PATH}:${HOME}/.cabal/bin
@@ -75,7 +75,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
-export PYTHONPATH=/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages:/home/bhilburn/code/ettus/autotest.git/characterization:/home/bhilburn/code/ettus/autotest.git/
+export PYTHONPATH=/home/bhilburn/usr/lib64/python2.7/site-packages:/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages:/home/bhilburn/code/ettus/autotest.git/characterization:/home/bhilburn/code/ettus/autotest.git/
 
 export DJANGO_SETTINGS_MODULE=characterize.settings
 
