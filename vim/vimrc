@@ -875,6 +875,14 @@ augroup ft_scala
 augroup END
 
 " }}}
+" TeX {{{
+
+augroup ft_tex
+    au!
+    au Filetype tex set spell
+augroup END
+
+" }}}
 " Vagrant {{{
 
 augroup ft_vagrant
