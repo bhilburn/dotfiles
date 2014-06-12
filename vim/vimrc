@@ -526,7 +526,7 @@ set formatoptions+=t,c,r,o,q,n,1
 " Filetype-specific formatting
 au FileType c,cpp,h set cindent formatoptions+=ro foldmethod=syntax
 au FileType c set omnifunc=ccomplete#Complete
-au FileType make set noexpandtab shiftwidth=8
+au FileType make set noexpandtab shiftwidth=4
 au FileType v,verilog set shiftwidth=3
 au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
 au FileType vim setlocal foldmethod=marker
