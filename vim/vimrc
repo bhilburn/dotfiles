@@ -909,7 +909,7 @@ augroup END
 " Ack {{{
 
 nnoremap <leader>a :Ack!<space>
-let g:ackprg = 'ack --ignore-file=is:tags --smart-case --nogroup --nocolor --column'
+let g:ackprg = 'ack --ignore-file=is:tags --ignore-dir=build --smart-case --nogroup --nocolor --column'
 
 " }}}
 " Autoclose {{{
@@ -966,7 +966,7 @@ let ctrlp_filter_greps = "".
     \ "jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po" .
     \ ")$' | " .
     \ "egrep -v '^(\\./)?(" .
-    \ "deploy/|lib/|classes/|libs/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/|docs/build/" .
+    \ "deploy/|.git/|.hg/|.svn/|docs/build/|build/" .
     \ ")'"
 
 let my_ctrlp_user_command = "" .
@@ -1258,6 +1258,11 @@ function! s:align()
     endif
 endfunction
 " }}}
+" Tagbar {{{
+inoremap <F7> :TagbarToggle<CR>
+nnoremap <F7> :TagbarToggle<CR>
+vnoremap <F7> :TagbarToggle<CR>
+" }}}
 " Taglist {{{
 inoremap <F1> :TlistToggle<CR>
 nnoremap <F1> :TlistToggle<CR>
@@ -1492,7 +1497,7 @@ function! SynStack()
   echo join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'), " > ")
 endfunc
 
-nnoremap <F7> :call SynStack()<CR>
+nnoremap <F9> :call SynStack()<CR>
 
 " }}}
 " Diffwhite Toggle {{{
@@ -1538,8 +1543,8 @@ function! QFixToggle(forced) " {{{
   endif
 endfunction " }}}
 
-nmap <silent> <f3> :ErrorsToggle<cr>
-nmap <silent> <f4> :QFixToggle<cr>
+nmap <silent> <F3> :ErrorsToggle<cr>
+nmap <silent> <F4> :QFixToggle<cr>
 
 " }}}
 " Nyan! {{{
