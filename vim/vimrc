@@ -29,7 +29,7 @@ set norelativenumber
 set laststatus=2
 set history=1000
 set list
-set listchars=tab:>-,trail:·,extends:❯,precedes:❮
+set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮
 set lazyredraw
 set shell=/bin/bash\ --login
 set matchtime=3
@@ -84,8 +84,8 @@ augroup END
 " Only shown when not in insert mode so I don't go insane.
 augroup trailing
     au!
-    au InsertEnter * :set listchars+=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:·
-    au InsertLeave * :set listchars-=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:·
+    au InsertEnter * :set listchars+=eol:¬
+    au InsertLeave * :set listchars-=eol:¬
 augroup END
 
 " Wildmode options, for command-line tab completion
@@ -466,7 +466,7 @@ nnoremap <down>  :lnext<cr>zvzz
 " Folding Settings
 set nofoldenable
 set foldlevelstart=0
-set foldlevel=100 
+set foldlevel=100
 set foldcolumn=2
 set foldmethod=indent
 set foldopen-=search
@@ -701,8 +701,8 @@ augroup ft_haskell
         let note = 1 < a:0 ? a:2 : inputdialog("Note: ")
         let description = 2 < a:0 ? a:3 : inputdialog("Describe this module: ")
 
-        return  repeat('-', s:width) . "\n" 
-        \       . "-- | \n" 
+        return  repeat('-', s:width) . "\n"
+        \       . "-- | \n"
         \       . "-- Module      : " . name . "\n"
         \       . "-- Note        : " . note . "\n"
         \       . "-- \n"
@@ -1323,7 +1323,7 @@ vnoremap ar a[
 " object of the given type.  These don't necessarily have to be in the current
 " line.
 "
-" Currently works for (, [, {, and their shortcuts b, r, B. 
+" Currently works for (, [, {, and their shortcuts b, r, B.
 "
 " Next kind of works for ' and " as long as there are no escaped versions of
 " them in the string (TODO: fix that).  Last is currently broken for quotes
@@ -1390,7 +1390,7 @@ function! s:NextTextObject(motion, dir)
         let open = ''
         let close = ''
 
-        if c ==# "(" 
+        if c ==# "("
             let open = "("
             let close = ")"
         elseif c ==# "{"
@@ -1922,3 +1922,6 @@ endif
 " filenames. If ViM hadn't auto-recognized the filetype to begin with, syntax
 " might not have been loaded.
 syntax on
+
+" Automatically remove trailing whitespace on buffer save.
+autocmd BufWritePre * :%s/\s\+$//e
