@@ -102,9 +102,6 @@ set wildignore+=*.luac                           " Lua byte code
 set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.orig                           " Merge resolution files
-" Clojure/Leiningen
-set wildignore+=classes
-set wildignore+=lib
 
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
@@ -831,11 +828,7 @@ augroup ft_python
     au FileType python setlocal define=^\s*\\(def\\\\|class\\)
     au FileType man nnoremap <buffer> <cr> :q<cr>
 
-    " Jesus tapdancing Christ, built-in Python syntax, you couldn't let me
-    " override this in a normal way, could you?
-    au FileType python if exists("python_space_error_highlight") | unlet python_space_error_highlight | endif
-
-    au FileType python iabbrev <buffer> afo assert False, "Okay"
+    "au FileType python if exists("python_space_error_highlight") | unlet python_space_error_highlight | endif
 augroup END
 
 " }}}
