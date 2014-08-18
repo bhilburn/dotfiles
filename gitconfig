@@ -17,3 +17,5 @@
 [core]
 	pager = less -F -X
 	editor = vim
+[reviewboard]
+	url = http://review-board.natinst.com

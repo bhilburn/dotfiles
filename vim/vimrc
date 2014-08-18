@@ -538,6 +538,7 @@ nnoremap <silent> <leader>k :SetLinuxFormatting<cr><cr>
 augroup ft_c
     au!
     au FileType c setlocal foldmethod=marker foldmarker={,}
+    au Filetype c set spell
 augroup END
 
 " }}}
@@ -827,6 +828,8 @@ augroup ft_python
 
     au FileType python setlocal define=^\s*\\(def\\\\|class\\)
     au FileType man nnoremap <buffer> <cr> :q<cr>
+
+    au Filetype python set spell
 
     "au FileType python if exists("python_space_error_highlight") | unlet python_space_error_highlight | endif
 augroup END
