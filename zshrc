@@ -69,7 +69,7 @@ export PATH=${PATH}:${HOME}/.cabal/bin
 export PATH=${PATH}:${HOME}/applications/cov-analysis-linux64-6.6.1/bin
 
 # For Xilinx Build Tools
-export XILINX=/opt/Xilinx/14.4/ISE_DS
+export XILINX=/opt/Xilinx/14.7/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/gnu/microblaze/lin64/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 
