@@ -8,6 +8,7 @@
 " and then re-enable.
 filetype off
 call pathogen#infect()
+filetype on
 filetype plugin indent on
 
 " Ignore compatibility issues with Vi. Really don't know why ViM still defaults
@@ -117,7 +118,6 @@ set expandtab
 set smarttab
 set softtabstop=4
 set shiftwidth=4
-set tabstop=4
 set wrap
 set textwidth=80
 set formatoptions=qrn1
@@ -365,7 +365,6 @@ set smartcase
 set incsearch
 set showmatch
 set hlsearch
-set gdefault
 set scrolloff=10
 set sidescroll=1
 set sidescrolloff=10
@@ -373,11 +372,8 @@ set virtualedit+=block
 
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
-" For some reason, lately, I need to run :MatchDebug to make this actually work
-" properly.
 runtime macros/matchit.vim
 map <tab> %
-MatchDebug
 
 " Made D behave
 nnoremap D d$
@@ -509,7 +505,6 @@ function! MyFoldText() " {{{
     return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
 endfunction " }}}
 set foldtext=MyFoldText()
-
 " Formatting options:
 "   t: Auto-wrap text
 "   c: Auto-wrap comments
@@ -521,7 +516,7 @@ set foldtext=MyFoldText()
 set formatoptions+=t,c,r,o,q,n,1
 
 " Filetype-specific formatting
-au FileType c,cpp,h set cindent formatoptions+=ro foldmethod=syntax
+au FileType c,cpp,h formatoptions+=ro foldmethod=syntax
 au FileType c set omnifunc=ccomplete#Complete
 au FileType make set noexpandtab shiftwidth=4
 au FileType v,verilog set shiftwidth=3
