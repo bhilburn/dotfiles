@@ -72,12 +72,12 @@ export PATH=${PATH}:${HOME}/applications/cov-analysis-linux64-6.6.1/bin
 export XILINX=/opt/Xilinx/14.7/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/gnu/microblaze/lin64/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
+export XIL_IMPACT_USE_LIBUSB=1
+export XILINXD_LICENSE_FILE=2100@us-aus-pcbflex.amer.corp.natinst.com
 
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
-export PYTHONPATH=/home/bhilburn/usr/lib64/python2.7/site-packages:/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages:/home/bhilburn/code/ettus/autotest.git/characterization:/home/bhilburn/code/ettus/autotest.git/
-
-export DJANGO_SETTINGS_MODULE=characterize.settings
+export PYTHONPATH=/home/bhilburn/usr/lib64/python2.7/site-packages:/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages
 
 alias ls="ls -FG --color=always"
 alias gr="grep --exclude-dir=build --exclude-dir=swig --exclude-dir=.git --exclude=tags -rniI "
@@ -85,9 +85,6 @@ alias h="history | grep "
 alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
 #eval `keychain --eval --agents ssh id_rsa`
-
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # For building firmware
 export PATH=$PATH:/opt/zpugcc/bin
