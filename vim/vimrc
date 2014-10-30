@@ -232,10 +232,6 @@ map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " Insert the directory of the current buffer in command line mode
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" Select entire buffer
-nnoremap vaa ggvGg_
-nnoremap Vaa ggVG
-
 " "Uppercase word" mapping.
 "
 " This mapping allows you to press <c-u> in insert mode to convert the current
@@ -435,6 +431,10 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <leader>v :vsplit<cr><C-w>l
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " Visual Mode */# from Scrooloose
 function! s:VSetSearch()
