@@ -712,8 +712,6 @@ augroup END
 " }}}
 " HTML, Django, Jinja, Dram {{{
 
-let g:html_indent_tags = ['p', 'li']
-
 augroup ft_html
     au!
 
