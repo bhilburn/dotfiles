@@ -717,8 +717,9 @@ let g:html_indent_tags = ['p', 'li']
 augroup ft_html
     au!
 
-    au BufNewFile,BufRead *.html setlocal filetype=htmldjango
-    au BufNewFile,BufRead *.dram setlocal filetype=htmldjango
+    au BufNewFile,BufRead *.hbs setlocal filetype=html
+    au BufNewFile,BufRead *.html setlocal filetype=html
+    au BufNewFile,BufRead *.dram setlocal filetype=html
 
     au FileType html,jinja,htmldjango setlocal foldmethod=manual
 
