@@ -17,31 +17,31 @@
 	path = vim/bundle/html5.git
 	url = git://github.com/othree/html5.vim.git
 [submodule "vim/bundle/indent-object"]
-	path = vim/bundle/indent-object
+	path = vim/bundle/indent-object.git
 	url = git://github.com/michaeljsmith/vim-indent-object.git
 [submodule "vim/bundle/javascript"]
-	path = vim/bundle/javascript
+	path = vim/bundle/javascript.git
 	url = git://github.com/pangloss/vim-javascript.git
 [submodule "vim/bundle/linediff"]
-	path = vim/bundle/linediff
+	path = vim/bundle/linediff.git
 	url = git://github.com/AndrewRadev/linediff.vim.git
 [submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+	path = vim/bundle/nerdtree.git
 	url = git://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/powerline"]
-	path = vim/bundle/powerline
+	path = vim/bundle/powerline.git
 	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/bundle/python-mode"]
-	path = vim/bundle/python-mode
+	path = vim/bundle/python-mode.git
 	url = git://github.com/klen/python-mode.git
 [submodule "vim/bundle/repeat"]
-	path = vim/bundle/repeat
+	path = vim/bundle/repeat.git
 	url = git://github.com/tpope/vim-repeat.git
 [submodule "vim/bundle/salt"]
-	path = vim/bundle/salt
+	path = vim/bundle/salt.git
 	url = git://github.com/saltstack/salt-vim.git
 [submodule "vim/bundle/sparkup"]
-	path = vim/bundle/sparkup
+	path = vim/bundle/sparkup.git
 	url = git://github.com/tristen/vim-sparkup.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab.git
@@ -59,22 +59,22 @@
 	path = vim/bundle/yankring.git
 	url = git://github.com/vim-scripts/YankRing.vim.git
 [submodule "vim/bundle/molokai"]
-	path = vim/bundle/molokai
+	path = vim/bundle/molokai.git
 	url = git://github.com/tomasr/molokai.git
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired.git
 	url = https://github.com/tpope/vim-unimpaired
 [submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
+	path = vim/bundle/snipmate.git
 	url = https://github.com/bhilburn/snipmate.vim.git
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist.git
 	url = git://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/rainbow_parentheses"]
-	path = vim/bundle/rainbow_parentheses
+	path = vim/bundle/rainbow_parentheses.git
 	url = git://github.com/kien/rainbow_parentheses.vim.git
 [submodule "vim/bundle/kernel-coding-style"]
-	path = vim/bundle/kernel-coding-style
+	path = vim/bundle/kernel-coding-style.git
 	url = git@github.com:bhilburn/kernel-coding-style.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular.git
@@ -86,7 +86,7 @@
 	path = vim/bundle/ghcmod-vim.git
 	url = https://github.com/eagletmt/ghcmod-vim.git
 [submodule "vim/bundle/neco-ghc"]
-	path = vim/bundle/neco-ghc
+	path = vim/bundle/neco-ghc.git
 	url = https://github.com/ujihisa/neco-ghc.git
 [submodule "vim/bundle/vim2hs"]
 	path = vim/bundle/vim2hs.git
@@ -103,3 +103,12 @@
 [submodule "vim/bundle/gundo.git"]
 	path = vim/bundle/gundo.git
 	url = https://github.com/sjl/gundo.vim.git
+[submodule "vim/bundle/slimv.git"]
+	path = vim/bundle/slimv.git
+	url = https://github.com/vim-scripts/slimv.vim.git
+[submodule "vim/bundle/splice.git"]
+	path = vim/bundle/splice.git
+	url = https://github.com/sjl/splice.vim.git
+[submodule "vim/bundle/strftimedammit.git"]
+	path = vim/bundle/strftimedammit.git
+	url = https://github.com/sjl/strftimedammit.vim.git
