@@ -115,3 +115,6 @@
 [submodule "vim/bundle/badwolf.git"]
 	path = vim/bundle/badwolf.git
 	url = https://github.com/sjl/badwolf.git
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = https://github.com/Lokaltog/powerline
