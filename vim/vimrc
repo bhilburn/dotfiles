@@ -901,6 +901,16 @@ nnoremap <leader>a :Ack!<space>
 let g:ackprg = 'ack --ignore-file=is:tags --ignore-dir=build --smart-case --nogroup --nocolor --column'
 
 " }}}
+" Airline {{{
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+
+" }}}
 " Autoclose {{{
 
 nmap <Leader>x <Plug>ToggleAutoCloseMappings
@@ -1080,18 +1090,6 @@ let g:org_plugins = ['ShowHide', '|', 'Navigator', 'EditStructure', '|', 'Todo',
 let g:org_todo_keywords = ['TODO', '|', 'DONE']
 
 let g:org_debug = 1
-
-" }}}
-" Powerline {{{
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-
-"let g:Powerline_symbols = 'fancy'
-"let g:Powerline_cache_enabled = 1
-"let g:Powerline_colorscheme = 'badwolf'
 
 " }}}
 " Python-Mode {{{
