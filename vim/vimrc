@@ -8,7 +8,6 @@
 " and then re-enable.
 filetype off
 call pathogen#infect()
-filetype on
 filetype plugin indent on
 
 " Ignore compatibility issues with Vi. Really don't know why ViM still defaults
@@ -31,7 +30,7 @@ set laststatus=2
 set history=1000
 set list
 set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮
-set lazyredraw
+"set lazyredraw
 set shell=/bin/bash\ --login
 set matchtime=3
 set showbreak=↪
@@ -1084,7 +1083,13 @@ let g:org_debug = 1
 
 " }}}
 " Powerline {{{
-"let g:Powerline_symbols = 'compatible'
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
+"let g:Powerline_symbols = 'fancy'
 "let g:Powerline_cache_enabled = 1
 "let g:Powerline_colorscheme = 'badwolf'
 
@@ -1883,7 +1888,7 @@ hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 " Environments (GUI / Console) {{{
 if has('gui_running')
     " GUI Vim
-    "set guifont=Menlo\ Regular\ for\ Powerline:h12
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 
     " Remove all the UI cruft
     set go-=T
@@ -1912,6 +1917,3 @@ endif
 " filenames. If ViM hadn't auto-recognized the filetype to begin with, syntax
 " might not have been loaded.
 syntax on
-
-" Automatically remove trailing whitespace on buffer save.
-autocmd BufWritePre * :%s/\s\+$//e
