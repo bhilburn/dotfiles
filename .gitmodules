@@ -112,3 +112,9 @@
 [submodule "vim/bundle/strftimedammit.git"]
 	path = vim/bundle/strftimedammit.git
 	url = https://github.com/sjl/strftimedammit.vim.git
+[submodule "vim/bundle/clam.git"]
+	path = vim/bundle/clam.git
+	url = https://github.com/sjl/clam.vim.git
+[submodule "vim/bundle/badwolf.git"]
+	path = vim/bundle/badwolf.git
+	url = https://github.com/sjl/badwolf.git
