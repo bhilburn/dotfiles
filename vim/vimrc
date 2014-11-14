@@ -1,5 +1,4 @@
-" At this point, most of this file is taken from Steve Losh's spectacular vimrc.
-" This version contains only minor edits and modifications from his original.
+" Much of this file is taken from Steve Losh's spectacular vimrc.
 "
 " Original Author: Steve Losh <steve@stevelosh.com>
 " Source: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
@@ -30,7 +29,6 @@ set laststatus=2
 set history=1000
 set list
 set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮
-"set lazyredraw
 set shell=/bin/bash\ --login
 set matchtime=3
 set showbreak=↪
@@ -42,9 +40,11 @@ set autoread
 set shiftround
 set title
 set linebreak
-"set dictionary=/usr/share/dict/words
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 set colorcolumn=+1
+
+" Disabling this because vim-airline doesn't like it
+"set lazyredraw
 
 " Set options regarding the undo history and undo tree depth
 set undofile
@@ -190,6 +190,7 @@ inoremap # X<BS>#
 imap <c-d> <ESC>
 nnoremap <c-d> <ESC>
 vnoremap <c-d> <ESC>
+cnoremap <c-d> <ESC>
 
 " Kill window
 "nnoremap K :q<cr>
@@ -221,9 +222,6 @@ nnoremap <leader><cr> :silent !myctags<cr>:redraw!<cr>
 nnoremap <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
                         \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
                         \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-" Clean trailing whitespace
-nnoremap <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 " Key mappings - clean whitespace
 map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
