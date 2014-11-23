@@ -1,0 +1,19 @@
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    wdiff = diff --color-words
+[user]
+	email = bhilburn@gmail.com
+	name = Ben Hilburn
+[color]
+	ui = auto
+[color "diff"]
+	meta = blue black bold
+[core]
+	pager = less -F -X
+	editor = vim
