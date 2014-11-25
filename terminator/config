@@ -1,0 +1,29 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  title_transmit_bg_color = "#1701a1"
+[keybindings]
+  go_up = <Alt>k
+  next_tab = <Shift><Alt>l
+  prev_tab = <Shift><Alt>h
+  go_down = <Alt>j
+  go_right = <Alt>l
+  go_left = <Alt>h
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    use_system_font = False
+    font = DejaVu Sans Mono 11
+    background_image = None
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    copy_on_selection = True
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
