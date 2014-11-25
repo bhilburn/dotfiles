@@ -121,3 +121,15 @@
 [submodule "tools/friendly-find.git"]
 	path = tools/friendly-find.git
 	url = https://github.com/sjl/friendly-find.git
+[submodule "vim/bundle/tlib_vim.git"]
+	path = vim/bundle/tlib_vim.git
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "vim/bundle/vim-addon-mw-utils.git"]
+	path = vim/bundle/vim-addon-mw-utils.git
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/vim-snipmate"]
+	path = vim/bundle/vim-snipmate.git
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/vim-snippets.git"]
+	path = vim/bundle/vim-snippets.git
+	url = https://github.com/honza/vim-snippets.git
