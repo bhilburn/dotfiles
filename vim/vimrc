@@ -376,7 +376,7 @@ nnoremap * *<c-o>
 " Jumping to tags.
 "
 " Basically, <c-]> jumps to tags (like normal) and <c-\> opens the tag in a new
-" split instead.
+" split instead, and <a-]> opens it in a new tab.
 "
 " Both of them will align the destination line to the upper middle part of the
 " screen.  Both will pulse the cursor line so you can see where the hell you
@@ -384,6 +384,7 @@ nnoremap * *<c-o>
 " enough for you to see the destination line.
 nnoremap <c-]> <c-]>mzzvzz15<c-e>`z:Pulse<cr>
 nnoremap <c-\> <c-w>v<c-]>mzzMzvzz15<c-e>`z:Pulse<cr>
+nnoremap <a-]> :tab split<cr>:exec("tag ".expand("<cword>"))<cr>mzzvzz15<c-e>`z:Pulse<cr>
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
