@@ -7,6 +7,9 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 
+# Used for some OHZsh themes to determine if user@host should be printed
+export DEFAULT_USER=bhilburn
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
