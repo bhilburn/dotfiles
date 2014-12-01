@@ -64,9 +64,6 @@
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist.git
 	url = git://github.com/vim-scripts/taglist.vim.git
-[submodule "vim/bundle/rainbow_parentheses"]
-	path = vim/bundle/rainbow_parentheses.git
-	url = git://github.com/kien/rainbow_parentheses.vim.git
 [submodule "vim/bundle/kernel-coding-style"]
 	path = vim/bundle/kernel-coding-style.git
 	url = git@github.com:bhilburn/kernel-coding-style.git
@@ -133,3 +130,6 @@
 [submodule "vim/bundle/vim-snippets.git"]
 	path = vim/bundle/vim-snippets.git
 	url = https://github.com/honza/vim-snippets.git
+[submodule "vim/bundle/rainbow.git"]
+	path = vim/bundle/rainbow.git
+	url = https://github.com/luochen1990/rainbow.git
