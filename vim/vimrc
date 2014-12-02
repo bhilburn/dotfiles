@@ -41,6 +41,7 @@ set title
 set linebreak
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 set colorcolumn=+1
+set modelines=5
 
 " Disabling this because vim-airline doesn't like it
 "set lazyredraw
@@ -49,7 +50,6 @@ set colorcolumn=+1
 set undofile
 set undoreload=10000
 set undolevels=512
-set modelines=0
 
 " Don't try to highlight lines longer than 800 characters.
 set synmaxcol=800
