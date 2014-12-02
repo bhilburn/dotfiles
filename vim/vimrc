@@ -7,6 +7,7 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
+syntax on
 
 " Ignore compatibility issues with Vi. Really don't know why ViM still defaults
 " to this. Especially gViM.
@@ -144,7 +145,6 @@ let maplocalleader = "\\"
 map <leader><space> :noh<cr>
 
 " Background, colorscheme, etc
-syntax on
 set background=dark
 set t_Co=256
 let g:badwolf_tabline = 2
@@ -1103,6 +1103,11 @@ let g:pymode_rope_local_prefix = "<localleader>r"
 let g:pymode_rope_autoimport_modules = ["os", "shutil", "datetime"]
 
 " }}}
+" Rainbow {{{
+
+let g:rainbow_active = 1
+
+" }}}
 " Scratch {{{
 
 command! ScratchToggle call ScratchToggle()
@@ -1755,12 +1760,3 @@ else
     set mouse=a
 endif
 " }}}
-
-" Finally, we have now set a whole bunch of different filetypes for specific
-" filenames. If ViM hadn't auto-recognized the filetype to begin with, syntax
-" might not have been loaded.
-syntax on
-
-" And, lastly, RainbowParentheses have to be turned on /after/ syntax is
-" enabled, becausey, you know, stuff is awesome.
-let g:rainbow_active = 1
