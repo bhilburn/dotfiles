@@ -12,7 +12,7 @@
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
-    font = DejaVu Sans Mono 11
+    font = DejaVu Sans Mono for Powerline 11
     background_image = None
     foreground_color = "#ffffff"
     show_titlebar = False
