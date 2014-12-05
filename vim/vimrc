@@ -769,6 +769,9 @@ augroup ft_lisp
     " au FileType lisp nnoremap <buffer> <localleader>ee mz99[(va("ry:call Send_to_Tmux(@r)<cr>
     " au FileType lisp nnoremap <buffer> <localleader>ee mz99[(:call SlimvEvalExp()<cr>`z
 
+    " Using a plugin for this
+    " let g:lisp_rainbow = 1
+
     " Fix the eval mappings.
     au FileType lisp nnoremap <buffer> <localleader>ef :call SlimvEvalExp()<cr>
     au FileType lisp nnoremap <buffer> <localleader>ee :call SlimvEvalDefun()<cr>
@@ -1031,11 +1034,6 @@ let g:atia_attributes_complete = 0
 
 vnoremap <leader>l :Linediff<cr>
 nnoremap <leader>L :LinediffReset<cr>
-
-" }}}
-" Lisp (built-in) {{{
-
-"let g:lisp_rainbow = 1
 
 " }}}
 " Makegreen {{{
