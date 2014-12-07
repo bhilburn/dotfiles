@@ -1100,6 +1100,8 @@ let g:pymode_rope_global_prefix = "<localleader>R"
 let g:pymode_rope_local_prefix = "<localleader>r"
 let g:pymode_rope_autoimport_modules = ["os", "shutil", "datetime"]
 
+let g:pymode_rope_complete_on_dot = 0
+
 " }}}
 " Rainbow {{{
 
