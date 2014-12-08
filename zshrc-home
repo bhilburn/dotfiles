@@ -5,7 +5,10 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="hokietux"
+ZSH_THEME="powerlevel9k"
+
+# Used for some OHZsh themes to determine if user@host should be printed
+export DEFAULT_USER=bhilburn
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -59,14 +62,8 @@ cp_p()
 
 source $ZSH/oh-my-zsh.sh
 
-# RPi Build Tools
-export RPI_BUILD_TOOLS=/home/bhilburn/code/rpi/rpi-tools.git/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/
-
 # PKG Config
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-
-# Python Module PATH
-export PYTHONPATH=/home/bhilburn/usr/lib64/python2.7/site-packages:/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages
 
 # Command Aliases
 alias ls="ls -FG --color=always"
@@ -78,6 +75,9 @@ alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 # PATH Configuration
 #########################################
 export PATH=/home/bhilburn/usr/bin:/home/bhilburn/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/bhilburn/bin:/usr/games
+
+# Python Module PATH
+export PYTHONPATH=/home/bhilburn/usr/lib64/python2.7/site-packages:/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages
 
 # For Haskell
 export PATH=${PATH}:${HOME}/.cabal/bin
