@@ -25,9 +25,12 @@ export DEFAULT_USER=bhilburn
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+# Highlight all available matches
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-syntax-highlighting gitfast git-extras svn history-substring-search colored-man colorize copyfile copydir cp dircycle)
+plugins=(zsh-syntax-highlighting gitfast git-extras svn history-substring-search colored-man colorize copyfile copydir cp dircycle command-not-found)
 
 ### KEY BINDINGS ############################################################
 
@@ -37,6 +40,9 @@ bindkey '^[OB' history-beginning-search-forward
 ## Vim key bindings
 bindkey '^?' backward-delete-char
 bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
 bindkey -M viins "\e." insert-last-word
 bindkey -M vicmd "\e." insert-last-word
 
@@ -60,13 +66,13 @@ cp_p()
          END { print "" }' total_size=$(stat -c '%s' "${1}") count=0
 }
 
+# push current command to stack, run a different command, pop from stack
+bindkey '^Q' push-input
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/home/bhilburn/usr/bin:/home/bhilburn/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin:/home/bhilburn/applications/CodeSourcery/bin:/usr/games
-
-# For Haskell...
-export PATH=${PATH}:${HOME}/.cabal/bin
 
 # For Coverity
 export PATH=${PATH}:${HOME}/applications/cov-analysis-linux64-6.6.1/bin
@@ -86,8 +92,6 @@ alias ls="ls -FG --color=always"
 alias gr="grep --exclude-dir=build --exclude-dir=swig --exclude-dir=.git --exclude=tags -rniI "
 alias h="history | grep "
 alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
-
-#eval `keychain --eval --agents ssh id_rsa`
 
 # For building firmware
 export PATH=$PATH:/opt/zpugcc/bin
