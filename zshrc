@@ -88,7 +88,7 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
 export PYTHONPATH=/home/bhilburn/usr/lib64/python2.7/site-packages:/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages
 
-alias ls="ls -FG --color=always"
+alias ls="ls -FG"
 alias gr="grep --exclude-dir=build --exclude-dir=swig --exclude-dir=.git --exclude=tags -rniI "
 alias h="history | grep "
 alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
@@ -96,5 +96,9 @@ alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 # For building firmware
 export PATH=$PATH:/opt/zpugcc/bin
 
+# MacPorts
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
 # Use ccache for all things
-export PATH=/usr/lib64/ccache:$PATH
+# export PATH=/usr/lib64/ccache:$PATH
+export PATH="/opt/local/libexec/ccache:$PATH"
