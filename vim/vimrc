@@ -1102,6 +1102,8 @@ let g:pymode_rope_autoimport_modules = ["os", "shutil", "datetime"]
 
 let g:pymode_rope_complete_on_dot = 0
 
+let g:pymode_lint_ignore = "E501,E265"
+
 " }}}
 " Rainbow {{{
 
