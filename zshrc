@@ -33,9 +33,9 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 plugins=(zsh-syntax-highlighting gitfast git-extras svn history-substring-search colored-man colorize copyfile copydir cp dircycle command-not-found)
 
 ### KEY BINDINGS ############################################################
-
-bindkey '^[OA' history-beginning-search-backward
-bindkey '^[OB' history-beginning-search-forward
+zmodload zsh/terminfo
+bindkey "$terminfo[cuu1]" history-substring-search-up
+bindkey "$terminfo[cud1]" history-substring-search-down
 
 ## Vim key bindings
 bindkey '^?' backward-delete-char
@@ -72,10 +72,7 @@ bindkey '^Q' push-input
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/home/bhilburn/usr/bin:/home/bhilburn/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin:/home/bhilburn/applications/CodeSourcery/bin:/usr/games
-
-# For Coverity
-export PATH=${PATH}:${HOME}/applications/cov-analysis-linux64-6.6.1/bin
+export PATH=/home/bhilburn/usr/bin:/home/bhilburn/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin
 
 # For Xilinx Build Tools
 export XILINX=/opt/Xilinx/14.7/ISE_DS
@@ -92,9 +89,6 @@ alias ls="ls -FG --color=always"
 alias gr="grep --exclude-dir=build --exclude-dir=swig --exclude-dir=.git --exclude=tags -rniI "
 alias h="history | grep "
 alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
-
-# For building firmware
-export PATH=$PATH:/opt/zpugcc/bin
 
 # Use ccache for all things
 export PATH=/usr/lib64/ccache:$PATH
