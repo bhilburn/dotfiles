@@ -1,6 +1,10 @@
 " Much of this file is taken from Steve Losh's spectacular vimrc.
 " Source: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
 
+" Ignore compatibility issues with Vi. Really don't know why ViM still defaults
+" to this. Especially gViM.
+set nocompatible
+
 " To enable Pathogen, we have to first disable the filetype, load the bundles,
 " and then re-enable.
 filetype off
@@ -8,10 +12,6 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 syntax on
-
-" Ignore compatibility issues with Vi. Really don't know why ViM still defaults
-" to this. Especially gViM.
-set nocompatible
 
 " General Options
 set encoding=utf-8
@@ -1101,6 +1101,8 @@ let g:pymode_rope_local_prefix = "<localleader>r"
 let g:pymode_rope_autoimport_modules = ["os", "shutil", "datetime"]
 
 let g:pymode_rope_complete_on_dot = 0
+
+let g:pymode_lint_ignore = "E501,E265"
 
 " }}}
 " Rainbow {{{

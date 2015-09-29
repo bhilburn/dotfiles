@@ -83,6 +83,9 @@ alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 #########################################
 export PATH=/home/bhilburn/usr/bin:/home/bhilburn/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/bhilburn/bin:/usr/games
 
+# NPM
+export PATH=$PATH:~/node_modules/.bin
+
 # Python Module PATH
 export PYTHONPATH=/home/bhilburn/usr/lib64/python2.7/site-packages:/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages
 
