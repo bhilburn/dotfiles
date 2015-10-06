@@ -1759,5 +1759,8 @@ else
     " Console Vim
     " Mouse support
     set mouse=a
+
+    " Transparent console vim background
+    hi Normal ctermbg=none
 endif
 " }}}
