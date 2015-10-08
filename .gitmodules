@@ -145,3 +145,6 @@
 [submodule "colors/base16-shell.git"]
 	path = colors/base16-shell.git
 	url = git@github.com:chriskempson/base16-shell.git
+[submodule "colors/papercolor-base16.git"]
+	path = colors/papercolor-base16.git
+	url = git@github.com:NLKNguyen/papercolor.git
