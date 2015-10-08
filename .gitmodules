@@ -136,3 +136,9 @@
 [submodule "vim/bundle/papercolor-theme.git"]
 	path = vim/bundle/papercolor-theme.git
 	url = git@github.com:NLKNguyen/papercolor-theme.git
+[submodule "vim/bundle/c-syntax.git"]
+	path = vim/bundle/c-syntax.git
+	url = git@github.com:NLKNguyen/c-syntax.vim.git
+[submodule "vim/bundle/python-syntax.git"]
+	path = vim/bundle/python-syntax.git
+	url = git@github.com:hdima/python-syntax.git
