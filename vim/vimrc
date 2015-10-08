@@ -148,6 +148,7 @@ map <leader><space> :noh<cr>
 " Background, colorscheme, etc
 set t_Co=256
 set background=dark
+let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme PaperColor
 
 " Reload the colorscheme whenever we write the file.
