@@ -142,3 +142,6 @@
 [submodule "vim/bundle/base16-colorscheme.git"]
 	path = vim/bundle/base16-colorscheme.git
 	url = git@github.com:chriskempson/base16-vim.git
+[submodule "colors/base16-shell.git"]
+	path = colors/base16-shell.git
+	url = git@github.com:chriskempson/base16-shell.git
