@@ -133,3 +133,6 @@
 [submodule "vim/bundle/rainbow.git"]
 	path = vim/bundle/rainbow.git
 	url = https://github.com/luochen1990/rainbow.git
+[submodule "vim/bundle/papercolor-theme.git"]
+	path = vim/bundle/papercolor-theme.git
+	url = git@github.com:NLKNguyen/papercolor-theme.git
