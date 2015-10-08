@@ -43,6 +43,7 @@ set linebreak
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 set colorcolumn=+1
 set modelines=5
+set cursorline
 
 " Disabling this because vim-airline doesn't like it
 "set lazyredraw
@@ -145,11 +146,9 @@ let maplocalleader = "\\"
 map <leader><space> :noh<cr>
 
 " Background, colorscheme, etc
-set background=dark
 set t_Co=256
-let g:badwolf_tabline = 2
-let g:badwolf_html_link_underline = 0
-colorscheme molokai
+set background=dark
+colorscheme PaperColor
 
 " Reload the colorscheme whenever we write the file.
 augroup color_badwolf_dev
@@ -530,14 +529,14 @@ nnoremap <silent> <leader>k :SetLinuxFormatting<cr><cr>
 augroup ft_c
     au!
     au FileType c setlocal foldmethod=marker foldmarker={,}
-    au Filetype c set spell
+    " au Filetype c set spell
 augroup END
 " }}}
 " C++ {{{
 augroup ft_cpp
     au!
     au FileType cpp setlocal foldmethod=marker foldmarker={,}
-    au Filetype cpp set spell
+    " au Filetype cpp set spell
 augroup END
 " }}}
 " Clojure {{{
@@ -826,6 +825,8 @@ augroup ft_python
 
     au Filetype python set spell
 
+    let python_highlight_all = 1
+
     "au FileType python if exists("python_space_error_highlight") | unlet python_space_error_highlight | endif
 augroup END
 
@@ -911,7 +912,7 @@ endif
 let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'PaperColor'
 " }}}
 " Autoclose {{{
 
