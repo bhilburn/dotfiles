@@ -41,8 +41,12 @@ DISABLE_AUTO_TITLE=true
 
 ### KEY BINDINGS ############################################################
 zmodload zsh/terminfo
-bindkey "$terminfo[cuu1]" history-substring-search-up
-bindkey "$terminfo[cud1]" history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# Have to do this again for tmux
+bindkey '^[[B' history-substring-search-down
+bindkey '^[[A' history-substring-search-up
 
 ## Vim key bindings
 bindkey '^?' backward-delete-char
