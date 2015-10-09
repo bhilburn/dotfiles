@@ -1276,14 +1276,6 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Inc_Winwidth = 0
 let Tlist_WinWidth = 40
 " }}}
-" tslime {{{
-
-"let g:tslime_ensure_trailing_newlines = 1
-"let g:tslime_normal_mapping = '<localleader>t'
-"let g:tslime_visual_mapping = '<localleader>t'
-"let g:tslime_vars_mapping = '<localleader>T'
-
-" }}}
 " YankRing {{{
 
 function! YRRunAfterMaps()

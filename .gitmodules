@@ -49,9 +49,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic.git
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/tslime"]
-	path = vim/bundle/tslime.git
-	url = git://github.com/kikijump/tslime.vim.git
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring.git
 	url = git://github.com/vim-scripts/YankRing.vim.git
