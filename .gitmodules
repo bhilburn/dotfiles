@@ -151,3 +151,6 @@
 [submodule "colors/base16-gnome-terminal.git"]
 	path = colors/base16-gnome-terminal.git
 	url = git@github.com:chriskempson/base16-gnome-terminal.git
+[submodule "tools/tmux-mem-cpu-load.git"]
+	path = tools/tmux-mem-cpu-load.git
+	url = git@github.com:thewtex/tmux-mem-cpu-load.git
