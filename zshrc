@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
@@ -84,6 +84,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/home/bhilburn/usr/bin:/home/bhilburn/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin
+
+export LD_LIBRARY_PATH=~/usr/lib64:~/usr/lib:${LD_LIBRARY_PATH}
 
 # For Xilinx Build Tools
 export XILINX=/opt/Xilinx/14.7/ISE_DS
