@@ -666,48 +666,6 @@ augroup ft_django
 augroup END
 
 " }}}
-" Haskell {{{
-
-augroup ft_haskell
-    au!
-    au BufEnter *.hs compiler ghc
-
-    setlocal omnifunc=necoghc#omnifunc
-
-    let s:width = 80
-
-    function! HaskellModuleSection(...)
-        let name = 0 < a:0 ? a:1 : inputdialog("Section name: ")
-
-        return  repeat('-', s:width) . "\n"
-        \       . "--  " . name . "\n"
-        \       . "\n"
-
-    endfunction
-    nmap <silent> --s "=HaskellModuleSection()<CR>gp
-
-
-    function! HaskellModuleHeader(...)
-        let name = 0 < a:0 ? a:1 : inputdialog("Module: ")
-        let note = 1 < a:0 ? a:2 : inputdialog("Note: ")
-        let description = 2 < a:0 ? a:3 : inputdialog("Describe this module: ")
-
-        return  repeat('-', s:width) . "\n"
-        \       . "-- | \n"
-        \       . "-- Module      : " . name . "\n"
-        \       . "-- Note        : " . note . "\n"
-        \       . "-- \n"
-        \       . "-- " . description . "\n"
-        \       . "-- \n"
-        \       . repeat('-', s:width) . "\n"
-        \       . "\n"
-
-    endfunction
-    nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
-
-augroup END
-
-" }}}
 " HTML, Django, Jinja, Dram {{{
 
 augroup ft_html
@@ -1018,11 +976,6 @@ let g:gundo_preview_bottom = 1
 let g:gundo_tree_statusline = "Gundo"
 let g:gundo_preview_statusline = "Gundo Preview"
 
-" }}}
-" Haskell {{{
-let g:haddock_browser = "/usr/bin/chromium-browser"
-let g:ghc = "/usr/bin/ghc"
-let g:haddock_docdir = "/usr/share/doc/ghc-doc/html"
 " }}}
 " HTML5 {{{
 
