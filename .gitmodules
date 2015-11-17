@@ -34,9 +34,6 @@
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat.git
 	url = git://github.com/tpope/vim-repeat.git
-[submodule "vim/bundle/salt"]
-	path = vim/bundle/salt.git
-	url = git://github.com/saltstack/salt-vim.git
 [submodule "vim/bundle/sparkup"]
 	path = vim/bundle/sparkup.git
 	url = git://github.com/tristen/vim-sparkup.git
@@ -91,18 +88,9 @@
 [submodule "vim/bundle/gundo.git"]
 	path = vim/bundle/gundo.git
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "vim/bundle/slimv.git"]
-	path = vim/bundle/slimv.git
-	url = https://github.com/vim-scripts/slimv.vim.git
-[submodule "vim/bundle/splice.git"]
-	path = vim/bundle/splice.git
-	url = https://github.com/sjl/splice.vim.git
 [submodule "vim/bundle/strftimedammit.git"]
 	path = vim/bundle/strftimedammit.git
 	url = https://github.com/sjl/strftimedammit.vim.git
-[submodule "vim/bundle/clam.git"]
-	path = vim/bundle/clam.git
-	url = https://github.com/sjl/clam.vim.git
 [submodule "vim/bundle/vim-airline.git"]
 	path = vim/bundle/vim-airline.git
 	url = https://github.com/bling/vim-airline.git
