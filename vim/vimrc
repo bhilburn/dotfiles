@@ -932,7 +932,7 @@ let g:ctrlp_split_window = 0
 let g:ctrlp_max_height = 20
 let g:ctrlp_extensions = ['tag']
 
-let g:ctrlp_map = '<leader>,'
+let g:ctrlp_map = '<leader>.'
 nnoremap <leader>. :CtrlPTag<cr>
 
 let g:ctrlp_prompt_mappings = {
@@ -965,17 +965,9 @@ let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command
 
 " }}}
 " EasyMotion {{{
-" <Leader>f{char} to move to {char}
-map  <Leader><Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
-
 " Move to line
 map <Leader><Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader><Leader>L <Plug>(easymotion-overwin-line)
-
-" Move to word
-map  <Leader><Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 " }}}
 " Fugitive {{{
 
