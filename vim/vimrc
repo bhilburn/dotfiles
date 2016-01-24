@@ -380,7 +380,6 @@ set ignorecase
 set smartcase
 set incsearch
 set showmatch
-set hlsearch
 set virtualedit+=block
 
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
@@ -968,6 +967,23 @@ let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command
 " Move to line
 map <Leader><Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader><Leader>L <Plug>(easymotion-overwin-line)
+
+" You can use other keymappings like <C-l> instead of <CR> if you want to
+" use these mappings as default search and somtimes want to move cursor with
+" EasyMotion.
+function! s:incsearch_config(...) abort
+  return incsearch#util#deepextend(deepcopy({
+  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+  \   'keymap': {
+  \     "\<CR>": '<Over>(easymotion)'
+  \   },
+  \   'is_expr': 0
+  \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> <Leader><Leader>/  incsearch#go(<SID>incsearch_config())
+noremap <silent><expr> <Leader><Leader>?  incsearch#go(<SID>incsearch_config({'command': '?'}))
+noremap <silent><expr> <Leader><Leader>g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
 " }}}
 " Fugitive {{{
 
@@ -1001,6 +1017,19 @@ let g:rdfa_attributes_complete = 0
 let g:microdata_attributes_complete = 0
 let g:atia_attributes_complete = 0
 
+" }}}
+" incsearch {{{
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 " }}}
 " Linediff {{{
 
