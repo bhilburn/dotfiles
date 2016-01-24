@@ -112,18 +112,9 @@
 [submodule "vim/bundle/undotree.git"]
 	path = vim/bundle/undotree.git
 	url = git@github.com:mbbill/undotree.git
-[submodule "vim/bundle/neocomplete.git"]
-	path = vim/bundle/neocomplete.git
-	url = git@github.com:Shougo/neocomplete.vim.git
 [submodule "vim/bundle/easymotion.git"]
 	path = vim/bundle/easymotion.git
 	url = git@github.com:easymotion/vim-easymotion.git
-[submodule "vim/bundle/neosnippet.git"]
-	path = vim/bundle/neosnippet.git
-	url = git@github.com:Shougo/neosnippet.vim.git
-[submodule "vim/bundle/neosnippet-snippets.git"]
-	path = vim/bundle/neosnippet-snippets.git
-	url = git@github.com:Shougo/neosnippet-snippets.git
 [submodule "vim/bundle/incsearch-easymotion.git"]
 	path = vim/bundle/incsearch-easymotion.git
 	url = git@github.com:haya14busa/incsearch-easymotion.vim.git
