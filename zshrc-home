@@ -36,6 +36,9 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(zsh-syntax-highlighting gitfast git-extras svn history-substring-search colored-man colorize copyfile copydir cp dircycle command-not-found)
 
+# Stop screwing up my tmux names
+DISABLE_AUTO_TITLE=true
+
 ### KEY BINDINGS ############################################################
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
