@@ -37,9 +37,6 @@
 [submodule "vim/bundle/sparkup"]
 	path = vim/bundle/sparkup.git
 	url = git://github.com/tristen/vim-sparkup.git
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab.git
-	url = git://github.com/ervandew/supertab.git
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround.git
 	url = git://github.com/tpope/vim-surround.git
@@ -70,9 +67,6 @@
 [submodule "vim/bundle/tagbar.git"]
 	path = vim/bundle/tagbar.git
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/gundo.git"]
-	path = vim/bundle/gundo.git
-	url = https://github.com/sjl/gundo.vim.git
 [submodule "vim/bundle/strftimedammit.git"]
 	path = vim/bundle/strftimedammit.git
 	url = https://github.com/sjl/strftimedammit.vim.git
@@ -124,3 +118,15 @@
 [submodule "tools/tmux-mem-cpu-load.git"]
 	path = tools/tmux-mem-cpu-load.git
 	url = git@github.com:thewtex/tmux-mem-cpu-load.git
+[submodule "vim/bundle/undotree.git"]
+	path = vim/bundle/undotree.git
+	url = git@github.com:mbbill/undotree.git
+[submodule "vim/bundle/neocomplete.git"]
+	path = vim/bundle/neocomplete.git
+	url = git@github.com:Shougo/neocomplete.vim.git
+[submodule "vim/bundle/easymotion.git"]
+	path = vim/bundle/easymotion.git
+	url = git@github.com:easymotion/vim-easymotion.git
+[submodule "vim/bundle/neosnippet.git"]
+	path = vim/bundle/neosnippet.git
+	url = git@github.com:Shougo/neosnippet.vim.git
