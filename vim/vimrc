@@ -1274,6 +1274,11 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Inc_Winwidth = 0
 let Tlist_WinWidth = 40
 " }}}
+" Ultisnips {{{
+let g:UltiSnipsExpandTrigger = '<S-CR>'
+let g:UltiSnipsJumpForwardTrigger = '<S-CR>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-CR>'
+" }}}
 " YankRing {{{
 
 function! YRRunAfterMaps()
@@ -1288,6 +1293,9 @@ function! YRRunAfterMaps()
     vnoremap p :<c-u>YRPaste 'p', 'v'<cr>gv:YRYankRange 'v'<cr>
 endfunction
 
+" }}}
+" YouCompleteMe {{{
+let g:ycm_collect_identifiers_from_tags_files = 1
 " }}}
 " }}}
 " Text objects ------------------------------------------------------------ {{{
