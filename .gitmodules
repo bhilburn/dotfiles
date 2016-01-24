@@ -85,12 +85,6 @@
 [submodule "vim/bundle/vim-addon-mw-utils.git"]
 	path = vim/bundle/vim-addon-mw-utils.git
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/bundle/vim-snipmate"]
-	path = vim/bundle/vim-snipmate.git
-	url = https://github.com/garbas/vim-snipmate.git
-[submodule "vim/bundle/vim-snippets.git"]
-	path = vim/bundle/vim-snippets.git
-	url = https://github.com/honza/vim-snippets.git
 [submodule "vim/bundle/rainbow.git"]
 	path = vim/bundle/rainbow.git
 	url = https://github.com/luochen1990/rainbow.git
@@ -130,3 +124,6 @@
 [submodule "vim/bundle/neosnippet.git"]
 	path = vim/bundle/neosnippet.git
 	url = git@github.com:Shougo/neosnippet.vim.git
+[submodule "vim/bundle/neosnippet-snippets.git"]
+	path = vim/bundle/neosnippet-snippets.git
+	url = git@github.com:Shougo/neosnippet-snippets.git

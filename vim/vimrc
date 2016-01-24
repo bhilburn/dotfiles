@@ -137,11 +137,11 @@ augroup END
 set expandtab
 set smarttab
 set softtabstop=4
+set tabstop=4
 set shiftwidth=4
 set wrap
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set textwidth=80
-set formatoptions=qrn1
 " }}}
 
 " Backup Files {{{
@@ -512,22 +512,6 @@ nnoremap zO zCzO
 " I use :sus for the rare times I want to actually background Vim.
 nnoremap <c-z> mzzMzvzz15<c-e>`z:Pulse<cr>
 
-function! MyFoldText() " {{{
-    let line = getline(v:foldstart)
-
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 3
-    let foldedlinecount = v:foldend - v:foldstart
-
-    " expand tabs into spaces
-    let onetab = strpart('          ', 0, &tabstop)
-    let line = substitute(line, '\t', onetab, 'g')
-
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
-endfunction " }}}
-set foldtext=MyFoldText()
 " Formatting options:
 "   t: Auto-wrap text
 "   c: Auto-wrap comments
@@ -536,29 +520,23 @@ set foldtext=MyFoldText()
 "   q: Allow formatting of comments with 'gq'
 "   n: Recognize lists and indent
 "   1: If possible, break lines before one-letter words, not after
-set formatoptions+=t,c,r,o,q,n,1
-
-" Filetype-specific formatting
-au FileType c,cpp,h set formatoptions+=ro foldmethod=syntax
-au FileType c set omnifunc=ccomplete#Complete
-au FileType make set noexpandtab shiftwidth=4
-au FileType v,verilog set shiftwidth=3
-au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
-au FileType vim setlocal foldmethod=marker
+set formatoptions+=c,r,q,n,1
 
 " Filetype-specific ------------------------------------------------------- {{{
 " C {{{
-
 augroup ft_c
     au!
-    au FileType c setlocal foldmethod=marker foldmarker={,}
+    au FileType c setlocal foldmethod=syntax
+    au FileType c set omnifunc=ccomplete#Complete
+    au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
     " au Filetype c set spell
 augroup END
 " }}}
 " C++ {{{
 augroup ft_cpp
     au!
-    au FileType cpp setlocal foldmethod=marker foldmarker={,}
+    au FileType c,cpp,h set foldmethod=syntax
+    au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
     " au Filetype cpp set spell
 augroup END
 " }}}
@@ -882,6 +860,12 @@ augroup ft_vagrant
     au BufRead,BufNewFile Vagrantfile set ft=ruby
 augroup END
 
+" }}}
+" Verilog {{{
+augroup ft_verilog
+    au!
+    au FileType v,verilog set shiftwidth=3
+augroup END
 " }}}
 " Vim {{{
 augroup ft_vim
