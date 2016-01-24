@@ -55,9 +55,6 @@
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist.git
 	url = git://github.com/vim-scripts/taglist.vim.git
-[submodule "vim/bundle/kernel-coding-style"]
-	path = vim/bundle/kernel-coding-style.git
-	url = git@github.com:bhilburn/kernel-coding-style.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular.git
 	url = git://github.com/godlygeek/tabular.git
