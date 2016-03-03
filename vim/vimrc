@@ -1279,6 +1279,9 @@ let g:UltiSnipsExpandTrigger = '<S-CR>'
 let g:UltiSnipsJumpForwardTrigger = '<S-CR>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-CR>'
 " }}}
+" Undotree {{{
+nnoremap <F5> :UndotreeToggle<cr>
+" }}}
 " YankRing {{{
 
 function! YRRunAfterMaps()
