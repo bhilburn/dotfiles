@@ -262,8 +262,8 @@ you should place your code here."
   ;; Sensible default geometry
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 200))
-  (custom-set-faces '(evil-search-highlight-persist-highlight-face)
-                    (((t (:background "selectedMenuItemColor")))))
+  (custom-set-faces '(evil-search-highlight-persist-highlight-face
+                      ((t (:background "selectedMenuItemColor")))))
 
   ;; Navigate by visual lines (e.g., `g j` in Vim)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
