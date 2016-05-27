@@ -253,8 +253,9 @@ you should place your code here."
   (setq-default evil-escape-key-sequence ",,")
   (setq-default evil-escape-delay 0.4)
 
-  ;; I use the 'split' command pretty regularly
-  (define-key evil-normal-state-map (kbd "S") 'spacemacs/split-and-new-line)
+  ;; Navigation keys I'm used to.
+  (define-key evil-normal-state-map (kbd "H") 'beginning-of-line)
+  (define-key evil-normal-state-map (kbd "L") 'end-of-line)
 
   ;; Show column boundary by default when editing code.
   (add-hook 'prog-mode-hook 'turn-on-fci-mode)
