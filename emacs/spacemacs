@@ -27,17 +27,25 @@ values."
      ;; better-defaults
      c-c++
      colors
+     dockerfile
      emacs-lisp
      git
+     haskell
+     html
+     javascript
+     latex
      markdown
      org
      python
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
+     shell-scripts
      spell-checking
      syntax-checking
      version-control
+     vimscript
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
