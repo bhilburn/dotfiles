@@ -45,7 +45,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(evil-search-highlight-persist)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -98,13 +98,10 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light
-                         solarized-light
-                         solarized-dark
-                         leuven
-                         monokai
-                         zenburn)
+   dotspacemacs-themes '(monokai
+                         spacemacs-dark
+                         solarized-dark)
+
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -256,12 +253,17 @@ you should place your code here."
   (setq-default evil-escape-key-sequence ",,")
   (setq-default evil-escape-delay 0.4)
 
+  ;; I use the 'split' command pretty regularly
+  (define-key evil-normal-state-map (kbd "S") 'spacemacs/split-and-new-line)
+
   ;; Show column boundary by default when editing code.
   (add-hook 'prog-mode-hook 'turn-on-fci-mode)
 
   ;; Sensible default geometry
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 200))
+  (custom-set-faces '(evil-search-highlight-persist-highlight-face)
+                    (((t (:background "selectedMenuItemColor")))))
 
   ;; Navigate by visual lines (e.g., `g j` in Vim)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
