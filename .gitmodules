@@ -130,3 +130,6 @@
 [submodule "vim/bundle/vim-snippets.git"]
 	path = vim/bundle/vim-snippets.git
 	url = https://github.com/honza/vim-snippets.git
+[submodule "tmux/tpm.git"]
+	path = tmux/tpm.git
+	url = git@github.com:tmux-plugins/tpm.git
