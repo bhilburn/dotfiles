@@ -256,6 +256,13 @@ you should place your code here."
   (setq-default evil-escape-key-sequence ",,")
   (setq-default evil-escape-delay 0.4)
 
+  ;; Show column boundary by default when editing code.
+  (add-hook 'prog-mode-hook 'turn-on-fci-mode)
+
+  ;; Sensible default geometry
+  (add-to-list 'default-frame-alist '(height . 50))
+  (add-to-list 'default-frame-alist '(width . 200))
+
   ;; Navigate by visual lines (e.g., `g j` in Vim)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -264,7 +271,6 @@ you should place your code here."
                 '((c-c++ :variables c-c++-default-mode-for-headers 'c++-mode)))
   (setq-default dotspacemacs-configuration-layers
                 '((c-c++ :variables c-c++-enable-clang-support t)))
-
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
