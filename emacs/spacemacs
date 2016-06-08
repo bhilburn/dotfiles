@@ -265,6 +265,9 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "H") 'beginning-of-line)
   (define-key evil-normal-state-map (kbd "L") 'end-of-line)
 
+  ;; I rather like splitting lines as ViM does it.
+  (define-key evil-normal-state-map (kbd "S") 'spacemacs/split-and-new-line)
+
   ;; Show column boundary by default when editing code.
   (add-hook 'prog-mode-hook 'turn-on-fci-mode)
 
