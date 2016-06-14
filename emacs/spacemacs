@@ -25,7 +25,9 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      ;; better-defaults
-     c-c++
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-enable-clang-support t)
      colors
      dockerfile
      emacs-lisp
@@ -47,6 +49,7 @@ values."
      vimscript
      yaml
      )
+
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -283,11 +286,6 @@ you should place your code here."
   ;; Navigate by visual lines (e.g., `g j` in Vim)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-
-  (setq-default dotspacemacs-configuration-layers
-                '((c-c++ :variables c-c++-default-mode-for-headers 'c++-mode)))
-  (setq-default dotspacemacs-configuration-layers
-                '((c-c++ :variables c-c++-enable-clang-support t)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
