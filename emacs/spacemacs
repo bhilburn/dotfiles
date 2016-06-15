@@ -277,6 +277,9 @@ you should place your code here."
   ;; Let's start up with a transparent frame.
   (spacemacs/toggle-transparent-frame)
 
+  ;; Disable smartparens because it annoys me
+  (spacemacs/toggle-smartparens-globally-off)
+
   ;; Sensible default geometry
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 200))
