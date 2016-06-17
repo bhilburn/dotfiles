@@ -56,7 +56,8 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(evil-search-highlight-persist)
+   dotspacemacs-excluded-packages '(evil-search-highlight-persist
+                                    smartparens)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -276,9 +277,6 @@ you should place your code here."
 
   ;; Let's start up with a transparent frame.
   (spacemacs/toggle-transparent-frame)
-
-  ;; Disable smartparens because it annoys me
-  (spacemacs/toggle-smartparens-globally-off)
 
   ;; Sensible default geometry
   (add-to-list 'default-frame-alist '(height . 50))
