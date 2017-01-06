@@ -7,6 +7,9 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+POWERLEVEL9K_HIDE_HOST=false
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
@@ -105,3 +108,5 @@ alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
 # Use ccache for all things
 export PATH="/usr/lib64/ccache:$PATH"
+
+bindkey "\e[3~" delete-char
