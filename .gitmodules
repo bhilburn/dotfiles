@@ -130,3 +130,6 @@
 [submodule "tmux/tpm.git"]
 	path = tmux/tpm.git
 	url = git@github.com:tmux-plugins/tpm.git
+[submodule "vim/bundle/vim-airline-themes.git"]
+	path = vim/bundle/vim-airline-themes.git
+	url = https://github.com/vim-airline/vim-airline-themes
