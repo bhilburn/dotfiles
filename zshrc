@@ -8,9 +8,13 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_HIDE_HOST=false
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs hdd_usage)
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status disk_usage history time)
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
+#POWERLEVEL9K_ALWAYS_SHOW_USER=true
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs user)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time history time)
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-eighties.sh"
@@ -88,7 +92,7 @@ bindkey '^Q' push-input
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/home/bhilburn/usr/bin:/home/bhilburn/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin
+export PATH=/home/bhilburn/usr/bin:/home/bhilburn/anaconda2/bin:/home/bhilburn/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bhilburn/bin
 
 export LD_LIBRARY_PATH=~/usr/lib64:~/usr/lib:${LD_LIBRARY_PATH}
 
@@ -101,7 +105,7 @@ export XILINXD_LICENSE_FILE=2100@us-aus-pcbflex.amer.corp.natinst.com
 
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
-export PYTHONPATH=/home/bhilburn/usr/lib64/python2.7/site-packages:/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages
+export PYTHONPATH=$PYTHONPATH:/home/bhilburn/usr/lib64/python2.7/site-packages:/usr/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages:/usr/local/lib64/python2.7/site-packages
 
 alias ls="ls --color=always -FG"
 alias gr="grep --exclude-dir=build --exclude-dir=swig --exclude-dir=.git --exclude=tags --exclude=TAGS --exclude-dir=site --exclude-dir=.deps -rniI "
@@ -112,3 +116,20 @@ alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 export PATH="/usr/lib64/ccache:$PATH"
 
 bindkey "\e[3~" delete-char
+
+cdUndoKey() {
+  popd      > /dev/null
+  zle       reset-prompt
+  echo
+}
+
+cdParentKey() {
+  pushd .. > /dev/null
+  zle      reset-prompt
+  echo
+}
+
+zle -N                 cdParentKey
+zle -N                 cdUndoKey
+bindkey '^[[1;3A'      cdParentKey
+bindkey '^[[1;3D'      cdUndoKey
