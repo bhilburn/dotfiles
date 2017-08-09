@@ -133,3 +133,6 @@
 [submodule "vim/bundle/vim-airline-themes.git"]
 	path = vim/bundle/vim-airline-themes.git
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "fonts/awesome-terminal-fonts"]
+	path = fonts/awesome-terminal-fonts
+	url = https://github.com/gabrielelana/awesome-terminal-fonts.git

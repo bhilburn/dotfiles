@@ -8,14 +8,12 @@
     dump = cat-file -p
     wdiff = diff --color-words
 [user]
-	email = ben.hilburn@ettus.com
-	name = Ben Hilburn
+    email = bhilburn@deepsig.io
+    name = Ben Hilburn
 [color]
-	ui = auto
+    ui = auto
 [color "diff"]
-	meta = blue black bold
+    meta = blue black bold
 [core]
-	pager = less -F -X
-	editor = vim
-[reviewboard]
-	url = http://review-board.natinst.com
+    pager = less -F -X
+    editor = vim
