@@ -55,7 +55,7 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 
 zle -N autosuggest-accept
-bindkey '^ ' autosuggest-accept
+bindkey '^[ ' autosuggest-accept
 zle -N autosuggest-execute
 bindkey '^[[ENT' autosuggest-execute
 
