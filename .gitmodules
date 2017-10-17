@@ -46,9 +46,6 @@
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring.git
 	url = git://github.com/vim-scripts/YankRing.vim.git
-[submodule "vim/bundle/molokai"]
-	path = vim/bundle/molokai.git
-	url = git://github.com/tomasr/molokai.git
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired.git
 	url = https://github.com/tpope/vim-unimpaired
@@ -82,9 +79,6 @@
 [submodule "vim/bundle/vim-addon-mw-utils.git"]
 	path = vim/bundle/vim-addon-mw-utils.git
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/bundle/rainbow.git"]
-	path = vim/bundle/rainbow.git
-	url = https://github.com/luochen1990/rainbow.git
 [submodule "vim/bundle/papercolor-theme.git"]
 	path = vim/bundle/papercolor-theme.git
 	url = git@github.com:NLKNguyen/papercolor-theme.git
