@@ -17,3 +17,4 @@
 [core]
     pager = less -F -X
     editor = vim
+    ignorecase = false
