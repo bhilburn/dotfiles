@@ -17,7 +17,7 @@ syntax on
 set autoindent
 set autowrite
 set autoread
-set foldenable                  " Auto fold code
+"set foldenable                  " Auto fold code
 set nowrap                      " Do not wrap long lines
 set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
 
@@ -46,7 +46,7 @@ set spellfile=~/.vim/custom-dictionary.utf-8.add
 " set colorcolumn=+1
 set virtualedit=onemore             " Allow for cursor beyond last character
 set modelines=5
-set cursorline
+set nocursorline
 set scrolloff=10
 
 set encoding=utf-8
@@ -92,11 +92,11 @@ au FocusLost * :silent! wall
 au VimResized * :wincmd =
 
 " Cline {{{
-augroup cline
-    au!
-    au WinLeave,InsertEnter * set nocursorline
-    au WinEnter,InsertLeave * set cursorline
-augroup END
+" augroup cline
+"     au!
+"     au WinLeave,InsertEnter * set nocursorline
+"     au WinEnter,InsertLeave * set cursorline
+" augroup END
 " }}}
 
 " Trailing Chars {{{
@@ -168,6 +168,7 @@ set t_Co=8
 set background=light
 highlight LineNr ctermfg=grey
 highlight ColorColumn ctermbg=grey
+highlight CursorLine cterm=NONE ctermbg=yellow ctermfg=black
 " let base16colorspace=256
 " colorscheme base16-eighties
 " }}}
@@ -215,6 +216,13 @@ imap <c-d> <ESC>
 nnoremap <c-d> <ESC>
 vnoremap <c-d> <ESC>
 cnoremap <c-d> <ESC>
+
+" If I'm holding Shift and press Space, I just want a Space
+map <S-Space> <Space>
+imap <S-Space> <Space>
+nnoremap <S-Space> <Space>
+vnoremap <S-Space> <Space>
+cnoremap <S-Space> <Space>
 
 " Kill window
 "nnoremap K :q<cr>
@@ -489,10 +497,6 @@ set foldmethod=indent
 set foldopen-=search
 set foldopen-=undo
 
-" Spacebar to toggle folds the cursor is over
-nnoremap <Space> za
-vnoremap <Space> za
-
 " Set ,z to toggle all folds on/off
 nnoremap <leader>z zi
 vnoremap <leader>z zi
@@ -525,6 +529,7 @@ set formatoptions+=c,r,q,n,1
 
 " Filetype-specific ------------------------------------------------------- {{{
 " C {{{
+
 augroup ft_c
     au!
     au FileType c setlocal foldmethod=syntax
@@ -532,77 +537,15 @@ augroup ft_c
     au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
     " au Filetype c set spell
 augroup END
+
 " }}}
 " C++ {{{
+
 augroup ft_cpp
     au!
     au FileType c,cpp,h set foldmethod=syntax
     au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
     " au Filetype cpp set spell
-augroup END
-" }}}
-" Clojure {{{
-
-augroup ft_clojure
-    au!
-
-    au BufNewFile,BufRead riemann.config set filetype=clojure
-    au FileType clojure silent! call TurnOnClojureFolding()
-    au FileType clojure compiler clojure
-    au FileType clojure setlocal report=100000
-
-    " Friendlier Paredit mappings.
-    au FileType clojure noremap <buffer> () :<c-u>call PareditWrap("(", ")")<cr>
-    au FileType clojure noremap <buffer> )( :<c-u>call PareditSplice()<cr>
-    au FileType clojure noremap <buffer> (( :<c-u>call PareditMoveLeft()<cr>
-    au FileType clojure noremap <buffer> )) :<c-u>call PareditMoveRight()<cr>
-    au FileType clojure noremap <buffer> (j :<c-u>call PareditJoin()<cr>
-    au FileType clojure noremap <buffer> (s :<c-u>call PareditSplit()<cr>
-    au FileType clojure noremap <buffer> [ :<c-u>call PareditSmartJumpOpening(0)<cr>
-    au FileType clojure noremap <buffer> ] :<c-u>call PareditSmartJumpClosing(0)<cr>
-    " )))
-
-    " Indent top-level form.
-    au FileType clojure nmap <buffer> <localleader>= mz99[(v%='z
-    " ])
-augroup END
-
-" }}}
-" Clojurescript {{{
-
-augroup ft_clojurescript
-    au!
-
-    au BufNewFile,BufRead *.cljs set filetype=clojurescript
-    au FileType clojurescript call TurnOnClojureFolding()
-
-    " Indent top-level form.
-    au FileType clojurescript nmap <buffer> <localleader>= v((((((((((((=%
-augroup END
-
-" }}}
-" Confluence {{{
-
-augroup ft_c
-    au!
-
-    au BufRead,BufNewFile *.confluencewiki setlocal filetype=confluencewiki
-
-    " Wiki pages should be soft-wrapped.
-    au FileType confluencewiki setlocal wrap linebreak nolist
-augroup END
-
-" }}}
-" Cram {{{
-
-let cram_fold=1
-
-augroup ft_cram
-    au!
-
-    au BufNewFile,BufRead *.t set filetype=cram
-    au Syntax cram setlocal foldlevel=1
-    au FileType cram nnoremap <buffer> <localleader>ee :e<cr>
 augroup END
 
 " }}}
@@ -700,6 +643,7 @@ augroup END
 
 " }}}
 " Haskell {{{
+
 augroup ft_haskell
     " Haskell post write lint and check with ghcmod
     " $ `cabal install ghcmod` if missing and ensure
@@ -708,15 +652,6 @@ augroup ft_haskell
         autocmd BufWritePost *.hs GhcModCheckAndLintAsync
     endif
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-augroup END
-" }}}
-" Java {{{
-
-augroup ft_java
-    au!
-
-    au FileType java setlocal foldmethod=marker
-    au FileType java setlocal foldmarker={,}
 augroup END
 
 " }}}
@@ -737,58 +672,12 @@ augroup ft_javascript
 augroup END
 
 " }}}
-" Lisp {{{
-
-augroup ft_lisp
-    au!
-    au FileType lisp call TurnOnLispFolding()
-    " au FileType lisp nnoremap <buffer> <localleader>ee mz99[(va("ry:call Send_to_Tmux(@r)<cr>
-    " au FileType lisp nnoremap <buffer> <localleader>ee mz99[(:call SlimvEvalExp()<cr>`z
-
-    " Using a plugin for this
-    " let g:lisp_rainbow = 1
-
-    " Fix the eval mappings.
-    au FileType lisp nnoremap <buffer> <localleader>ef :call SlimvEvalExp()<cr>
-    au FileType lisp nnoremap <buffer> <localleader>ee :call SlimvEvalDefun()<cr>
-
-    au FileType lisp nnoremap <buffer> <localleader>tt mz0l99[(vab"ry:call Send_to_Tmux(@r)<cr>`z
-    au FileType lisp nnoremap <buffer> <localleader>tb mzggVG"ry:call Send_to_Tmux(@r)<cr>`z
-
-    " Indent top-level form.
-    au FileType lisp nmap <buffer> <localleader>= mz99[(v%='z
-augroup END
-
-" }}}
 " Markdown {{{
 
 augroup ft_markdown
     au!
     au Filetype markdown set spell
-
-augroup END
-
-" }}}
-" Mercurial {{{
-
-augroup ft_mercurial
-    au!
-
-    au BufNewFile,BufRead *hg-editor-*.txt setlocal filetype=hgcommit
-augroup END
-
-" }}}
-" Nginx {{{
-
-augroup ft_nginx
-    au!
-
-    au BufRead,BufNewFile /etc/nginx/conf/*                      set ft=nginx
-    au BufRead,BufNewFile /etc/nginx/sites-available/*           set ft=nginx
-    au BufRead,BufNewFile /usr/local/etc/nginx/sites-available/* set ft=nginx
-    au BufRead,BufNewFile vhost.nginx                            set ft=nginx
-
-    au FileType nginx setlocal foldmethod=marker foldmarker={,}
+    syn match markdownError "\w\@<=\w\@=" " Stop telling me underscores are errors.
 augroup END
 
 " }}}
@@ -800,7 +689,7 @@ augroup ft_python
     au FileType python setlocal define=^\s*\\(def\\\\|class\\)
     au FileType man nnoremap <buffer> <cr> :q<cr>
 
-    au Filetype python set spell
+    " au Filetype python set spell
 
     let python_highlight_all = 1
 
@@ -838,14 +727,6 @@ augroup ft_ruby
 augroup END
 
 " }}}
-" Scala {{{
-
-augroup ft_scala
-    au!
-    au Filetype scala setlocal foldmethod=indent
-augroup END
-
-" }}}
 " TeX {{{
 
 augroup ft_tex
@@ -863,12 +744,15 @@ augroup END
 
 " }}}
 " Verilog {{{
+
 augroup ft_verilog
     au!
-    au FileType v,verilog set shiftwidth=3
+    au FileType v,verilog set shiftwidth=4
 augroup END
+
 " }}}
 " Vim {{{
+
 augroup ft_vim
     au!
 
@@ -876,6 +760,7 @@ augroup ft_vim
     au FileType help setlocal textwidth=78
     au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
 augroup END
+
 " }}}
 " }}}
 " Plugin settings --------------------------------------------------------- {{{
