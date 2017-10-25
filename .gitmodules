@@ -28,9 +28,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree.git
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/python-mode"]
-	path = vim/bundle/python-mode.git
-	url = git://github.com/klen/python-mode.git
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat.git
 	url = git://github.com/tpope/vim-repeat.git
@@ -85,9 +82,6 @@
 [submodule "vim/bundle/c-syntax.git"]
 	path = vim/bundle/c-syntax.git
 	url = git@github.com:NLKNguyen/c-syntax.vim.git
-[submodule "vim/bundle/python-syntax.git"]
-	path = vim/bundle/python-syntax.git
-	url = git@github.com:hdima/python-syntax.git
 [submodule "vim/bundle/base16-colorscheme.git"]
 	path = vim/bundle/base16-colorscheme.git
 	url = git@github.com:chriskempson/base16-vim.git
@@ -130,3 +124,6 @@
 [submodule "fonts/awesome-terminal-fonts"]
 	path = fonts/awesome-terminal-fonts
 	url = https://github.com/gabrielelana/awesome-terminal-fonts.git
+[submodule "vim/bundle/python-syntax-fork.git"]
+	path = vim/bundle/python-syntax-fork.git
+	url = https://github.com/kh3phr3n/python-syntax.git
