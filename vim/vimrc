@@ -519,13 +519,12 @@ nnoremap <c-z> mzzMzvzz15<c-e>`z:Pulse<cr>
 
 " Formatting options:
 "   c: Auto-wrap comments
-"   a: Auto-format paragraphs in comments when text is added / removed
 "   r: Auto-insert comment leader after <enter>
 "   o: Auto-insert comment leader after o or O
 "   q: Allow formatting of comments with 'gq'
 "   n: Recognize lists and indent
 "   1: If possible, break lines before one-letter words, not after
-set formatoptions+=c,a,r,q,n,1
+set formatoptions+=c,r,q,n,1
 
 " Filetype-specific ------------------------------------------------------- {{{
 " C {{{
