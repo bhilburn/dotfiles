@@ -518,14 +518,14 @@ nnoremap zO zCzO
 nnoremap <c-z> mzzMzvzz15<c-e>`z:Pulse<cr>
 
 " Formatting options:
-"   t: Auto-wrap text
 "   c: Auto-wrap comments
+"   a: Auto-format paragraphs in comments when text is added / removed
 "   r: Auto-insert comment leader after <enter>
 "   o: Auto-insert comment leader after o or O
 "   q: Allow formatting of comments with 'gq'
 "   n: Recognize lists and indent
 "   1: If possible, break lines before one-letter words, not after
-set formatoptions+=c,r,q,n,1
+set formatoptions+=c,a,r,q,n,1
 
 " Filetype-specific ------------------------------------------------------- {{{
 " C {{{
@@ -979,22 +979,6 @@ let g:org_todo_keywords = ['TODO', '|', 'DONE']
 let g:org_debug = 1
 
 " }}}
-" Python-Mode {{{
-
-let g:pymode_doc_key = 'M'
-let g:pydoc = 'pydoc'
-let g:pymode_run = 0
-
-let g:pymode_rope = 1
-let g:pymode_rope_global_prefix = "<localleader>R"
-let g:pymode_rope_local_prefix = "<localleader>r"
-let g:pymode_rope_autoimport_modules = ["os", "shutil", "datetime"]
-
-let g:pymode_rope_complete_on_dot = 0
-
-let g:pymode_lint_ignore = "E501,E265"
-
-" }}}
 " Rainbow {{{
 
 let s:rainbow_conf = {
@@ -1047,19 +1031,6 @@ function! ScratchToggle()
 endfunction
 
 nnoremap <silent> <leader><tab> :ScratchToggle<cr>
-
-" }}}
-" SLIMV {{{
-let g:slimv_leader = '\'
-let g:slimv_keybindings = 2
-let g:slimv_repl_name = 'SLIMV.REPL'
-let g:slimv_repl_split = 4
-" let g:slimv_repl_syntax = 0
-let g:slimv_repl_wrap = 0
-let g:slimv_preferred = 'clisp'
-
-" Use a swank command that works, and doesn't require new app windows.
-let g:slimv_swank_clojure = '!dtach -n /tmp/dtach-swank.sock -r winch lein swank'
 
 " }}}
 " Sparkup {{{
