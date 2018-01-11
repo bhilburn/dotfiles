@@ -967,29 +967,6 @@ nnoremap <silent> <leader><tab> :ScratchToggle<cr>
 let g:sparkupNextMapping = '<c-s>'
 
 "}}}
-" Syntastic {{{
-
-let g:syntastic_enable_signs = 1
-let g:syntastic_enable_balloons = 1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_check_on_open = 0
-let g:syntastic_mode_map = {
-            \ "mode": "active",
-            \ "active_filetypes": [],
-            \ "passive_filetypes": ['java', 'html', 'rst', 'scala']
-            \ }
-let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
-
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_auto_refresh_includes = 1
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
-let g:syntastic_cpp_remove_include_errors = 1
-
-nnoremap <leader>C :SyntasticCheck<cr>
-
-" }}}
 " Tabular {{{
 if exists(":Tabularize")
     nmap <leader>t= :Tabularize /=<CR>
