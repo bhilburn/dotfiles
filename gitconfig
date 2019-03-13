@@ -8,7 +8,7 @@
     dump = cat-file -p
     wdiff = diff --color-words
 [user]
-    email = bhilburn@deepsig.io
+	email = bhilburn@gmail.com
     name = Ben Hilburn
 [color]
     ui = auto
@@ -18,3 +18,8 @@
     pager = less -F -X
     editor = vim
     ignorecase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
