@@ -1,0 +1,121 @@
+{
+    "breadcrumbs.enabled": true,
+    "editor.fontSize": 14,
+    "editor.minimap.enabled": true,
+    "editor.minimap.showSlider": "always",
+    "editor.occurrencesHighlight": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.renderControlCharacters": true,
+    "search.exclude": {
+        "**/build": true,
+        "**/node_modules": true,
+        "**/bower_components": true
+    },
+    "editor.fontFamily": "Source Code Pro",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
+     
+    // IntelliSense Settings
+    "editor.tabCompletion": "on",
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.wordBasedSuggestions": true,
+    "editor.suggest.localityBonus": true,
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+        "sideBar.border": "#bbc0c5",
+        "sideBar.foreground": "#8BADC1",
+        "panel.border": "#bbc0c5",
+        "editor.selectionBackground": "#3971c5",
+        "editor.selectionHighlightBackground": "#39bcc5"
+      },
+
+    "files.associations": {
+        "*.p9k": "shellscript"
+    },
+
+    // Extension Settings
+    "C_Cpp.default.browse.path": [
+        "${workspaceFolder}"
+    ],
+
+    "cmake.configureOnOpen": false,
+    "cmake.installPrefix": "~/usr/",
+    "cmake.parallelJobs": 4,
+    "cmake.saveBeforeBuild": false,
+
+    "bracket-pair-colorizer-2.forceIterationColorCycle": false,
+    "bracket-pair-colorizer-2.colors": [
+        "Gold",
+        "Orchid",
+        "LightSkyBlue",
+        "LightGreen",
+        "LightRed"
+    ],
+
+    "latex-workshop.view.pdf.viewer": "tab",
+
+    "markdown.extension.toc.unorderedList.marker": "*",
+
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": ",",
+    "vim.easymotionMarkerBackgroundColor": "white",
+    "vim.easymotionMarkerFontSize": "16",
+    "vim.easymotionMarkerForegroundColorOneChar": "black",
+    "vim.easymotionMarkerForegroundColorTwoChar": "black",
+    "vim.easymotionMarkerYOffset": 0,
+    "vim.easymotionMarkerHeight": 20,
+    "vim.easymotionMarkerWidthPerChar": 14,
+    "vim.easymotionMarkerFontWeight": "bold",
+    "vim.easymotionMarkerFontFamily": "Source Code Pro",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [":"],
+            "commands": [
+                "workbench.action.showCommands",
+            ]
+        },
+        {
+            "before": ["<leader>", "m"],
+            "commands": [
+                "bookmarks.toggle"
+            ]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": [
+                "bookmarks.list"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ]
+}
